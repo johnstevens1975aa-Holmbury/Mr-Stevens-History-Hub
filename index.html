@@ -629,6 +629,22 @@ window.enterStudentSite=function(){
   #td-1066 .index194-1066-right-column,
   #td-1066 [data-index190-sidebar="true"]{grid-column:1!important;width:100%!important;min-width:0!important;max-width:100%!important;}
 }
+/* INDEX197: Ensure sidebar never shows outside the 1066 panel */
+.detail-side[data-index190-sidebar="true"] {
+  display:none !important;
+}
+#td-1066[style*="display:block"] .detail-side[data-index190-sidebar="true"],
+#td-1066[style*="display: block"] .detail-side[data-index190-sidebar="true"] {
+  display:flex !important;
+}
+/* Hide sidebar inline style when panel is hidden - belt and braces */
+</style>
+<style id="index197-sidebar-hide">
+aside.detail-side { display:none !important; }
+#td-1066[style*="display:block"] aside.detail-side,
+#td-1066[style*="display: block"] aside.detail-side {
+  display:flex !important;
+}
 </style>
 <script id="index194-1066-final-right-column-watchdog">
 (function(){
@@ -680,6 +696,156 @@ window.enterStudentSite=function(){
 })();
 </script>
 
+<style id="index197-lightbox-css">
+/* Image lightbox overlay */
+#img-lightbox-overlay {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  z-index:99999;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  box-sizing:border-box;
+}
+#img-lightbox-overlay.active { display:flex; }
+#img-lightbox-overlay img {
+  max-width:92vw;
+  max-height:88vh;
+  object-fit:contain;
+  border-radius:10px;
+  box-shadow:0 0 60px rgba(0,0,0,.8);
+  cursor:default;
+}
+#img-lightbox-close {
+  position:fixed;
+  top:18px;
+  right:22px;
+  background:rgba(217,119,6,.85);
+  border:none;
+  color:#fff;
+  font-size:1.5rem;
+  font-weight:900;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:100000;
+  line-height:1;
+  transition:background .2s;
+}
+#img-lightbox-close:hover { background:rgba(217,119,6,1); }
+#img-lightbox-caption {
+  position:fixed;
+  bottom:18px;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,.7);
+  color:#fbbf24;
+  font-size:.78rem;
+  padding:6px 16px;
+  border-radius:999px;
+  max-width:80vw;
+  text-align:center;
+  font-family:inherit;
+  z-index:100000;
+}
+/* Make images in 1066 section look clickable */
+#td-1066 .activity-visual-card img,
+#td-1066 figure img,
+#td-1066 img.lightbox-img {
+  cursor:zoom-in;
+  transition:transform .15s, box-shadow .15s;
+}
+#td-1066 .activity-visual-card img:hover,
+#td-1066 figure img:hover,
+#td-1066 img.lightbox-img:hover {
+  transform:scale(1.03);
+  box-shadow:0 8px 32px rgba(212,175,55,.4);
+}
+</style>
+<script id="index197-lightbox-js">
+(function(){
+  // Create lightbox elements
+  var overlay = document.createElement('div');
+  overlay.id = 'img-lightbox-overlay';
+  var closeBtn = document.createElement('button');
+  closeBtn.id = 'img-lightbox-close';
+  closeBtn.innerHTML = '&#215;';
+  closeBtn.title = 'Close';
+  var lightImg = document.createElement('img');
+  lightImg.id = 'img-lightbox-img';
+  var caption = document.createElement('div');
+  caption.id = 'img-lightbox-caption';
+  overlay.appendChild(closeBtn);
+  overlay.appendChild(lightImg);
+  overlay.appendChild(caption);
+  document.body.appendChild(overlay);
+
+  function openLightbox(src, alt){
+    lightImg.src = src;
+    caption.textContent = alt || '';
+    caption.style.display = alt ? 'block' : 'none';
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    overlay.classList.remove('active');
+    lightImg.src = '';
+    document.body.style.overflow = '';
+  }
+  closeBtn.addEventListener('click', closeLightbox);
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) closeLightbox(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLightbox(); });
+
+  // Attach lightbox to images inside td-1066 after page loads
+  function attachLightbox(){
+    var panel = document.getElementById('td-1066');
+    if(!panel) return;
+    var imgs = panel.querySelectorAll('img');
+    imgs.forEach(function(img){
+      if(img.dataset.lightboxAttached) return;
+      img.dataset.lightboxAttached = 'true';
+      img.classList.add('lightbox-img');
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function(){
+        var src = img.src || img.dataset.src;
+        var alt = img.alt || img.closest('figure')?.querySelector('figcaption')?.textContent || '';
+        if(src) openLightbox(src, alt);
+      });
+    });
+  }
+
+  // Run on load and also whenever td-1066 is opened
+  document.addEventListener('DOMContentLoaded', function(){
+    attachLightbox();
+    // Re-run when td-1066 becomes visible (openTopic hook)
+    var origOpen = window.openTopic;
+    if(typeof origOpen === 'function'){
+      window.openTopic = function(id){
+        var r = origOpen.apply(this, arguments);
+        if(id === 'td-1066') setTimeout(attachLightbox, 100);
+        return r;
+      };
+    }
+    // Also watch for showPg calls that reveal 1066
+    var origShowPg = window.showPg;
+    if(typeof origShowPg === 'function'){
+      window.showPg = function(id){
+        var r = origShowPg.apply(this, arguments);
+        setTimeout(attachLightbox, 100);
+        return r;
+      };
+    }
+  });
+  window.addEventListener('load', attachLightbox);
+  window.attachLightbox = attachLightbox;
+})();
+</script>
 </head>
 <body>
 <div id="sb-ov" onclick="sbClose()"></div>
