@@ -4,6 +4,8 @@
 <!-- INDEX192 1066 FINAL RIGHT COLUMN ACTIVITY VISUALS FIX - right sidebar grid enforced; activity visuals embedded; visual prompts added. -->
 <html lang="en-GB">
 <head>
+<!-- INDEX217_DIAGNOSTIC_BUTTON_CODEBLEED_FIXED_2026_07_23 -->
+<meta name="historyhub-build" content="INDEX217_DIAGNOSTIC_BUTTON_CODEBLEED_FIXED_2026_07_23">
 <!-- INDEX216_STABLE_IMAGE_DIAGNOSTIC_FROM_215_2026_07_23 -->
 <meta name="historyhub-build" content="INDEX216_STABLE_IMAGE_DIAGNOSTIC_FROM_215_2026_07_23">
 <!-- INDEX215_FROM_INDEX214_TARGETED_IMAGE_REPAIR_2026_07_23 -->
@@ -937,6 +939,11 @@ aside[data-index190-sidebar],
 #index216-img-audit-btn{position:fixed;right:14px;bottom:14px;z-index:99999;border:1px solid rgba(212,175,55,.65);background:#120d08;color:#fbbf24;border-radius:999px;padding:8px 12px;font-weight:800;font-size:12px;box-shadow:0 4px 18px rgba(0,0,0,.45)}
 #index216-img-audit-panel{display:none;position:fixed;left:12px;right:12px;bottom:58px;max-height:45vh;overflow:auto;z-index:99999;background:rgba(12,10,9,.98);border:1px solid rgba(212,175,55,.45);border-radius:12px;padding:12px;color:#fff7ed;font:12px/1.45 system-ui,Arial;box-shadow:0 8px 30px rgba(0,0,0,.6)}
 #index216-img-audit-panel code{color:#93c5fd;word-break:break-all;white-space:normal}
+</style>
+<style id="index217-audit-css">
+#index217-img-audit-btn{position:fixed;right:14px;bottom:14px;z-index:999999;border:1px solid rgba(212,175,55,.75);background:#120d08;color:#fbbf24;border-radius:999px;padding:9px 13px;font-weight:900;font-size:12px;box-shadow:0 4px 18px rgba(0,0,0,.48);font-family:system-ui,Arial,sans-serif;}
+#index217-img-audit-panel{display:none;position:fixed;left:12px;right:12px;bottom:62px;max-height:48vh;overflow:auto;z-index:999999;background:rgba(12,10,9,.98);border:1px solid rgba(212,175,55,.55);border-radius:12px;padding:12px;color:#fff7ed;font:12px/1.45 system-ui,Arial,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.6);}
+#index217-img-audit-panel code{color:#93c5fd;word-break:break-all;white-space:normal;}
 </style>
 </head>
 <body>
@@ -8633,34 +8640,6 @@ function aeDl(btn){
 <!-- INDEX210: targeted image repairs for What is History, Medieval Entertainment, Health/Black Death, and Castles; improved castle diagrams. -->
 <!-- INDEX214_RESTORE_210_SAFE_TARGETED_IMAGE_FIX_FROM_INDEX210_2026_07_23 END: based on index210; td-1066 not modified; target sections receive safe real-image fallbacks. -->
 <!-- INDEX215_FROM_INDEX214_TARGETED_IMAGE_REPAIR_2026_07_23 END: index210 preserved, td-1066 untouched, target sections get real fallback chain. -->
-<script id="index216-image-audit-tool">
-(function(){
-  function listFailed(){
-    var imgs=Array.from(document.images||[]);
-    var failed=imgs.filter(function(img){return img.complete && img.naturalWidth===0;});
-    var panel=document.getElementById('index216-img-audit-panel');
-    if(!panel)return;
-    var html='<strong>Image audit: '+failed.length+' failed / '+imgs.length+' total</strong><br><br>';
-    if(!failed.length){ html+='No failed images detected by this browser.'; }
-    failed.slice(0,120).forEach(function(img,i){
-      html+='<div style="margin:0 0 8px 0"><b>#'+(i+1)+'</b> alt: '+(img.alt||'(no alt)')+'<br><code>'+img.currentSrc+'</code></div>';
-    });
-    panel.innerHTML=html;
-    panel.style.display= panel.style.display==='block' ? 'none' : 'block';
-  }
-  document.addEventListener('DOMContentLoaded',function(){
-    var btn=document.createElement('button');
-    btn.id='index216-img-audit-btn';
-    btn.type='button';
-    btn.textContent='Image audit';
-    btn.onclick=listFailed;
-    var panel=document.createElement('div');
-    panel.id='index216-img-audit-panel';
-    document.body.appendChild(btn); document.body.appendChild(panel);
-  });
-})();
-</script>
-<!-- INDEX216_STABLE_IMAGE_DIAGNOSTIC_FROM_215_2026_07_23 END: stable diagnostic build; fallback swapping removed. -->
 </body></html>';
   var blob=new Blob(['\ufeff'+html],{type:'application/msword'});
   var url=URL.createObjectURL(blob);
@@ -10322,5 +10301,37 @@ document.addEventListener('DOMContentLoaded',function(){setTimeout(function(){re
 })();
 </script>
 <!-- INDEX190: 1066 right column, embedded activity visuals and five in-depth visual prompts complete. -->
+<script id="index217-image-audit-tool">
+(function(){
+  function initAudit(){
+    if(document.getElementById('index217-img-audit-btn')) return;
+    var btn=document.createElement('button');
+    btn.id='index217-img-audit-btn';
+    btn.type='button';
+    btn.textContent='Image audit';
+    var panel=document.createElement('div');
+    panel.id='index217-img-audit-panel';
+    btn.onclick=function(){
+      var imgs=Array.from(document.images||[]);
+      var failed=imgs.filter(function(img){return img.complete && img.naturalWidth===0;});
+      var html='<strong>Image audit: '+failed.length+' failed / '+imgs.length+' total</strong><br><br>';
+      if(!failed.length){html+='No failed images detected by this browser.';}
+      failed.slice(0,160).forEach(function(img,i){
+        html+='<div style="margin:0 0 8px 0"><b>#'+(i+1)+'</b> alt: '+(img.alt||'(no alt)')+'<br><code>'+img.currentSrc+'</code></div>';
+      });
+      panel.innerHTML=html;
+      panel.style.display=panel.style.display==='block'?'none':'block';
+    };
+    document.body.appendChild(btn);
+    document.body.appendChild(panel);
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',initAudit);
+  }else{
+    initAudit();
+  }
+})();
+</script>
+<!-- INDEX217_DIAGNOSTIC_BUTTON_CODEBLEED_FIXED_2026_07_23 END: audit script inserted before final body close to avoid code bleed. -->
 </body>
 </html>
