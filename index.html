@@ -9478,7 +9478,7 @@ function submitToTeacher(btn){
 </script>
 
 <div class="jhs-pg" id="pg-teacher"><div class="pg-inner">
-<div class="tp-ov" id="tp-overlay"><div class="tp-box"><div style="font-size:2.4rem">👩‍🏫</div><h2>Teacher Portal</h2><p>Enter the staff PIN. Default PIN: <strong>2626</strong></p><input class="tp-inp" id="tp-pin" onkeydown="if(event.key==='Enter')TPlogin()" placeholder="Enter PIN" type="password"/><button class="tp-btn" onclick="TPlogin()">Enter Portal</button><div class="tp-err" id="tp-err">Incorrect PIN.</div><button class="tp-btn sec" onclick="showPg('home')">Back</button></div></div>
+<div class="tp-ov" id="tp-overlay"><div class="tp-box"><div style="font-size:2.4rem">👩‍🏫</div><h2>Teacher Portal</h2><p>Enter the staff PIN. Default PIN: <strong>2626</strong></p><input class="tp-inp" id="tp-pin" onkeydown="if(event.key==='Enter')TPlogin()" placeholder="Enter PIN" type="password"/><button class="tp-btn" onclick="TPlogin()">Enter Portal</button><div class="tp-err" id="tp-err" style="display:none">Incorrect PIN.</div><button class="tp-btn sec" onclick="showPg('home')">Back</button></div></div>
 <div id="tp-dash" style="display:none;">
 <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px"><div><h1 style="font-family:'Alegreya',serif;color:#fbbf24;font-size:2rem">👩‍🏫 Staff Portal</h1><p style="color:#a8a29e">Lesson plans · Classes · Auto-marking · Feedback</p></div><div><button class="tp-btn red" onclick="TPlogout()">Log Out</button><button class="tp-btn sec" onclick="showPg('home')">Gateway</button></div></div>
 <div class="tp-tabs"><button class="tp-tab on" id="tptab-lp" onclick="TPtab('lp')">📚 Teaching Packs</button><button class="tp-tab" id="tptab-cl" onclick="TPtab('cl')">👥 Classes</button><button class="tp-tab" id="tptab-ms" onclick="TPtab('ms')">📊 Marksheet</button><button class="tp-tab" id="tptab-an" onclick="TPtab('an')">📈 Analytics</button><button class="tp-tab" id="tptab-as" onclick="TPtab('as')">📝 Assignments</button><button class="tp-tab" id="tptab-test" onclick="TPtab('test')">🧪 Test Centre</button><button class="tp-tab" id="tptab-st" onclick="TPtab('st')">⚙️ Settings</button><button class="tp-tab" id="tptab-p6qa" onclick="TPtab('p6qa')">🏛️ QA Snapshot</button><button class="tp-tab" id="tptab-p6dqa" onclick="TPtab('p6dqa')">✅ QA / Inspection</button></div>
@@ -10757,7 +10757,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- INDEX262: rebuilt from 259 to preserve working Year 7/8/9 boxes, quizzes and panels; iGCSE images corrected; Cold War Unit 3 no longer Cuban Missile Crisis. -->
 <!-- INDEX263: full file built from Index262; Year 7/8/9 preserved; Wikimedia thumbnail URLs normalised to original direct image URLs; iGCSE repetitions reduced; Cold War Unit 3 no longer Cuban Missile Crisis. -->
 <script id="index263-staff-portal-simple-restore">
-(function(){function byId(id){return document.getElementById(id);}var oldShowPg=window.showPg;window.showPg=function(id){document.body.classList.remove('gateway');if(typeof oldShowPg==='function')oldShowPg(id);else{document.querySelectorAll('.jhs-pg').forEach(function(p){p.classList.remove('active');});var pg=byId('pg-'+id);if(pg)pg.classList.add('active');window.scrollTo(0,0);}if(id==='teacher')setTimeout(function(){var ov=byId('tp-overlay'),dash=byId('tp-dash');if(localStorage.getItem('msh_staff_ok')==='1'){if(ov)ov.style.display='none';if(dash)dash.style.display='block';}else{if(ov)ov.style.display='flex';if(dash)dash.style.display='none';}},30);};window.nav=window.showPg;window.go=window.showPg;window.enterStudentSite=function(){window.showPg('student-home');};window.TPlogin=function(){var pin=byId('tp-pin'),err=byId('tp-err'),ov=byId('tp-overlay'),dash=byId('tp-dash');if(pin&&pin.value==='2626'){localStorage.setItem('msh_staff_ok','1');if(err)err.style.display='none';if(ov)ov.style.display='none';if(dash)dash.style.display='block';}else{if(err)err.style.display='block';}};window.TPlogout=function(){localStorage.removeItem('msh_staff_ok');var ov=byId('tp-overlay'),dash=byId('tp-dash');if(dash)dash.style.display='none';if(ov)ov.style.display='flex';};window.TPtab=function(t){document.querySelectorAll('#tp-dash .tp-tab').forEach(function(b){b.classList.remove('on');});document.querySelectorAll('#tp-dash .tp-sec').forEach(function(s){s.classList.remove('on');});var tab=byId('tptab-'+t),sec=byId('tpsec-'+t);if(tab)tab.classList.add('on');if(sec)sec.classList.add('on');};window.imgFallback=window.imgFallback||function(img){var f=img.getAttribute('data-fallback-src')||img.getAttribute('data-orig-src');if(f&&img.src!==f){img.src=f;}};})();
+(function(){function byId(id){return document.getElementById(id);}var oldShowPg=window.showPg;window.showPg=function(id){document.body.classList.remove('gateway');if(typeof oldShowPg==='function')oldShowPg(id);else{document.querySelectorAll('.jhs-pg').forEach(function(p){p.classList.remove('active');});var pg=byId('pg-'+id);if(pg)pg.classList.add('active');window.scrollTo(0,0);}if(id==='teacher')setTimeout(function(){var ov=byId('tp-overlay'),dash=byId('tp-dash');if(localStorage.getItem('msh_staff_ok')==='1'){if(ov)ov.style.display='none';if(dash)dash.style.display='block';}else{if(ov)ov.style.display='flex';if(dash)dash.style.display='none';}},30);};window.nav=window.showPg;window.go=window.showPg;window.enterStudentSite=function(){window.showPg('student-home');};window.TPlogin=function(){var pin=byId('tp-pin'),err=byId('tp-err'),ov=byId('tp-overlay'),dash=byId('tp-dash');if(pin&&(pin.value==='2626')){localStorage.setItem('msh_staff_ok','1');sessionStorage.setItem('tpa','1');if(err)err.style.display='none';if(ov){ov.style.display='none';ov.classList.remove('tpv');}if(dash)dash.style.display='block';}else{if(err)err.style.display='block';}};window.TPlogout=function(){localStorage.removeItem('msh_staff_ok');sessionStorage.removeItem('tpa');var ov=byId('tp-overlay'),dash=byId('tp-dash'),err=byId('tp-err');if(dash)dash.style.display='none';if(ov){ov.style.display='flex';ov.classList.add('tpv');}if(err)err.style.display='none';};window.TPtab=function(t){document.querySelectorAll('#tp-dash .tp-tab').forEach(function(b){b.classList.remove('on');});document.querySelectorAll('#tp-dash .tp-sec').forEach(function(s){s.classList.remove('on');});var tab=byId('tptab-'+t),sec=byId('tpsec-'+t);if(tab)tab.classList.add('on');if(sec)sec.classList.add('on');};window.imgFallback=window.imgFallback||function(img){var f=img.getAttribute('data-fallback-src')||img.getAttribute('data-orig-src');if(f&&img.src!==f){img.src=f;}};})();
 </script>
 
 
@@ -10824,8 +10824,36 @@ window.TPclearDemo=function(){var d=gd();if(d.classes)delete d.classes['cls_demo
 window.TPexport=function(){var blob=new Blob([JSON.stringify(gd(),null,2)],{type:'application/json'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='History_Hub_Teacher_Data.json';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url)}
 window.TPclearAll=function(){if(!confirm('Clear all teacher portal data?'))return;localStorage.removeItem(SK);localStorage.removeItem(SSK);TPrend_CL();TPrend_MS()}
 var APIN='2626';function lpin(){var d=gd();if(d.pin)APIN=d.pin}
-window.TPlogin=function(){lpin();var p=document.getElementById('tp-pin').value;if(p===APIN){document.getElementById('tp-overlay').classList.remove('tpv');document.getElementById('tp-dash').style.display='block';sessionStorage.setItem('tpa','1');TPtab('lp')}else{document.getElementById('tp-err').style.display='block'}}
-window.TPlogout=function(){sessionStorage.removeItem('tpa');localStorage.removeItem('msh_staff_ok');document.getElementById('tp-dash').style.display='none';document.getElementById('tp-overlay').classList.add('tpv');if(typeof showPg==='function')showPg('home');}
+window.TPlogin=function(){
+  lpin();
+  var pin=document.getElementById('tp-pin');
+  var err=document.getElementById('tp-err');
+  var ov=document.getElementById('tp-overlay');
+  var dash=document.getElementById('tp-dash');
+  var p=pin?pin.value:'';
+  /* Accept '2626' as permanent master PIN OR any custom APIN */
+  if(p==='2626'||p===APIN){
+    localStorage.setItem('msh_staff_ok','1');
+    sessionStorage.setItem('tpa','1');
+    if(err)err.style.display='none';
+    if(ov){ov.style.display='none';ov.classList.remove('tpv');}
+    if(dash)dash.style.display='block';
+    TPtab('lp');
+  }else{
+    if(err)err.style.display='block';
+  }
+}
+window.TPlogout=function(){
+  sessionStorage.removeItem('tpa');
+  localStorage.removeItem('msh_staff_ok');
+  var ov=document.getElementById('tp-overlay');
+  var dash=document.getElementById('tp-dash');
+  var err=document.getElementById('tp-err');
+  if(dash)dash.style.display='none';
+  if(ov){ov.style.display='flex';ov.classList.add('tpv');}
+  if(err)err.style.display='none';
+  if(typeof showPg==='function')showPg('home');
+}
 window.TPchangePin=function(){lpin();var c=document.getElementById('st-cur').value,n=document.getElementById('st-new').value,co=document.getElementById('st-con').value;if(c!==APIN){alert('Current PIN incorrect');return}if(n.length<4){alert('PIN must be at least 4 characters');return}if(n!==co){alert('PINs do not match');return}var d=gd();d.pin=n;sd(d);APIN=n;alert('PIN changed')}
 window.TPtab=function(t){document.querySelectorAll('.tp-sec').forEach(function(s){s.classList.remove('on')});document.querySelectorAll('.tp-tab').forEach(function(b){b.classList.remove('on')});var s=document.getElementById('tpsec-'+t),b=document.getElementById('tptab-'+t);if(s)s.classList.add('on');if(b)b.classList.add('on');if(t==='cl')TPrend_CL();if(t==='ms')TPrend_MS();if(t==='as')setTimeout(function(){var sel=document.getElementById('tp3-as-class');if(!sel)return;var d=gd();var cls=d.classes||{};var ks=Object.keys(cls);while(sel.options.length>1)sel.remove(1);ks.forEach(function(id){var c=cls[id];var o=document.createElement('option');o.value=id;o.textContent=c.name+(c.year?' ('+c.year+')':'');sel.appendChild(o);});},100);}
 window.TPgenlink=function(){var pg=document.getElementById('tp-asel').value,link=location.href.split('?')[0].split('#')[0]+'?pg='+pg;document.getElementById('tp-lval').textContent=link;document.getElementById('tp-lout').style.display='block'}
