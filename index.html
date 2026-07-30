@@ -10808,75 +10808,9 @@ window.TPchangePin=function(){lpin();var c=document.getElementById('st-cur').val
 window.TPtab=function(t){document.querySelectorAll('.tp-sec').forEach(function(s){s.classList.remove('on')});document.querySelectorAll('.tp-tab').forEach(function(b){b.classList.remove('on')});var s=document.getElementById('tpsec-'+t),b=document.getElementById('tptab-'+t);if(s)s.classList.add('on');if(b)b.classList.add('on');if(t==='cl')TPrend_CL();if(t==='ms')TPrend_MS();if(t==='as')setTimeout(function(){var sel=document.getElementById('tp3-as-class');if(!sel)return;var d=gd();var cls=d.classes||{};var ks=Object.keys(cls);while(sel.options.length>1)sel.remove(1);ks.forEach(function(id){var c=cls[id];var o=document.createElement('option');o.value=id;o.textContent=c.name+(c.year?' ('+c.year+')':'');sel.appendChild(o);});},100);}
 window.TPgenlink=function(){var pg=document.getElementById('tp-asel').value,link=location.href.split('?')[0].split('#')[0]+'?pg='+pg;document.getElementById('tp-lval').textContent=link;document.getElementById('tp-lout').style.display='block'}
 window.TPcopy=function(txt,btn){navigator.clipboard.writeText(txt).then(function(){var o=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=o},1500)}).catch(function(){prompt('Copy link',txt)})}
-window.SPlogin=function(){
-  var n=document.getElementById('sp-name').value.trim();
-  var c=document.getElementById('sp-code').value.trim();
-  if(!n||!c){alert('Enter your name and class code');return}
-  /* Search classes in ALL storage systems */
-  var cid=null;
-  var cu=c.toUpperCase(); var cl=c.toLowerCase();
-  /* 1. gd().classes object */
-  var d=gd();
-  if(d.classes){
-    cid=Object.keys(d.classes).find(function(id){
-      var cls=d.classes[id]||{};
-      return id.slice(-6).toUpperCase()===cu || cl===(cls.pin||'').toLowerCase() || cu===(cls.name||'').toUpperCase();
-    })||null;
-  }
-  /* 2. msh_classes legacy array */
-  if(!cid){
-    try{
-      var arr=JSON.parse(localStorage.getItem('msh_classes')||'[]');
-      var found=arr.find(function(cls){
-        return (cls.id||'').slice(-6).toUpperCase()===cu || cl===(cls.pin||'').toLowerCase() || (cls.name||'').toUpperCase()===cu;
-      });
-      if(found)cid=found.id||found.name||null;
-    }catch(e){}
-  }
-  if(!cid){alert('Class not found. Please check your class code with your teacher.');return}
-  localStorage.setItem('mrsh_sn',n);localStorage.setItem('mrsh_sc',c);
-  document.getElementById('sp-login').style.display='none';
-  document.getElementById('sp-portal').style.display='block';
-  document.getElementById('sp-welcome').textContent='Welcome, '+n+' \u2014 Your submitted work:';
-  SPrend(n,cid);
-}
-window.SPlogout=function(){
-  document.getElementById('sp-login').style.display='block';
-  document.getElementById('sp-portal').style.display='none';
-  localStorage.removeItem('mrsh_sn');
-  localStorage.removeItem('mrsh_sc');
-};
-function SPrend(n,cid){
-  var host=document.getElementById('sp-list');
-  if(!host)return;
-  var d=gd();
-  /* Gather subs from gd().subs AND legacy msh_submissions */
-  var allSubs=[];
-  if(d.subs){
-    Object.values(d.subs).forEach(function(s){allSubs.push(s);});
-  }
-  try{var legSubs=JSON.parse(localStorage.getItem('msh_submissions')||'[]');if(Array.isArray(legSubs))legSubs.forEach(function(s){allSubs.push(s);});}catch(e){}
-  var subs=allSubs.filter(function(s){
-    var nameMatch=!n||s.student===n;
-    var classMatch=!cid||s.classId===cid||((s.classId||'').slice(-6).toUpperCase()===(cid||'').slice(-6).toUpperCase());
-    return nameMatch&&classMatch;
-  });
-  /* Remove duplicates by id */
-  var seen={};
-  subs=subs.filter(function(s){if(seen[s.id])return false;seen[s.id]=1;return true;});
-  if(!subs.length){
-    host.innerHTML='<div style="text-align:center;padding:28px 0;"><div style="font-size:2.5rem;margin-bottom:10px;">📝</div><p style="color:#a8a29e;font-size:.9rem;">No submitted work found yet.</p><p style="color:#a8a29e;font-size:.78rem;margin-top:6px;">When you submit an activity using the "Submit to Teacher" button, your work will appear here.</p></div>';
-    return;
-  }
-  host.innerHTML=subs.map(function(s){
-    var col=gradeColour(s.grade);
-    return '<div class="sp-card"><div style="display:flex;gap:14px"><div class="sp-ring" style="border-color:'+col+';color:'+col+'">'+esc(s.grade||'?')+'</div>'
-      +'<div style="flex:1"><b style="color:#fff7ed;display:block;margin-bottom:3px;">'+esc(s.title||'Activity')+'</b>'
-      +'<div style="color:#a8a29e;font-size:.76rem;margin-bottom:6px;">'+new Date(s.at).toLocaleDateString('en-GB')+'</div>'
-      +'<div class="sp-fb" style="font-size:.82rem;color:#e8e4d0;line-height:1.5;">'+esc(s.feedback||'Awaiting teacher feedback.')+'</div>'
-      +'</div></div></div>';
-  }).join('');
-}
+window.SPlogin=function(){var n=document.getElementById('sp-name').value.trim(),c=document.getElementById('sp-code').value.trim();if(!n||!c){alert('Enter name and class code');return}var d=gd(),cid=Object.keys(d.classes||{}).find(function(id){return id.slice(-6).toUpperCase()===c.toUpperCase()||c.toLowerCase()===(d.classes[id].pin||'').toLowerCase()});if(!cid){alert('Class not found');return}localStorage.setItem('mrsh_sn',n);localStorage.setItem('mrsh_sc',c);document.getElementById('sp-login').style.display='none';document.getElementById('sp-portal').style.display='block';document.getElementById('sp-welcome').textContent='Welcome, '+n;SPrend(n,cid)}
+window.SPlogout=function(){document.getElementById('sp-login').style.display='block';document.getElementById('sp-portal').style.display='none'};
+function SPrend(n,cid){var c=document.getElementById('sp-list'),d=gd(),subs=Object.values(d.subs||{}).filter(function(s){return s.student===n&&s.classId===cid});if(!subs.length){c.innerHTML='<p style="color:#a8a29e">No submitted work yet.</p>';return}c.innerHTML=subs.map(function(s){var col=gradeColour(s.grade);return '<div class="sp-card"><div style="display:flex;gap:14px"><div class="sp-ring" style="border-color:'+col+';color:'+col+'">'+esc(s.grade||'?')+'</div><div><b style="color:#fff7ed">'+esc(s.title)+'</b><div style="color:#a8a29e;font-size:.76rem">'+new Date(s.at).toLocaleDateString('en-GB')+'</div><div class="sp-fb">'+esc(s.feedback||'No feedback yet.')+'</div></div></div></div>'}).join('')}
 window.enterStudentSite=function(){document.body.classList.remove('gateway');var sb=document.getElementById('sb');if(sb)sb.classList.add('open');showPg('y7')}
 var _origShowPg=window.showPg;window.showPg=function(id){if(_origShowPg)_origShowPg(id);if(id==='home'){document.body.classList.add('gateway')}else{document.body.classList.remove('gateway')}if(id==='teacher'){if(sessionStorage.getItem('tpa')==='1'){document.getElementById('tp-overlay').classList.remove('tpv');document.getElementById('tp-dash').style.display='block';TPtab('lp')}else{document.getElementById('tp-overlay').classList.add('tpv');document.getElementById('tp-dash').style.display='none'}}}
 document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('gateway');observeEditors();var p=new URLSearchParams(location.search).get('pg');if(p)setTimeout(function(){showPg(p)},600)});
