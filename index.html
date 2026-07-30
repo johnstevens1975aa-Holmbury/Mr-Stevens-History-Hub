@@ -1,8 +1,32 @@
 <!DOCTYPE html>
+<!-- INDEX281: Phase refs removed, act-boxes in 8 RV panels, assignment class dropdown fixed. -->
 <!-- INDEX280: Teaching Packs tab restored, Phase 6 QA and QA/Inspection tabs added, Revision Hub act-boxes added. -->
 <!-- INDEX280: (1) removed 6 disabled scripts for speed, (2) restored 134 tp-phase2-engine with TPcreateClass/gd/sd, (3) removed RAG background images, (4) cleaned Revision Hub panels. -->
 <!-- INDEX278: 3 targeted fixes from 277: (1) restored 134 act-editor-engine for student editors, (2) fixed iGCSE exam IDs removing -dup suffix, (3) PIN optional in TPcreateClass. -->
 <!-- INDEX277: escaped ALL 
+<script id="index281-class-dropdown-fix">
+(function(){
+  function populateClassSelect(){
+    var sel=document.getElementById('tp3-as-class');
+    if(!sel)return;
+    var classes=[];
+    try{var d=JSON.parse(localStorage.getItem('mrsh_tp_phase2_v1')||'{}');classes=d.classes||[];}catch(e){}
+    if(!classes.length){try{classes=JSON.parse(localStorage.getItem('msh_classes')||'[]');}catch(e){}}
+    while(sel.options.length>1)sel.remove(1);
+    classes.forEach(function(c){
+      var o=document.createElement('option');
+      o.value=c.id||c.name||'';
+      o.textContent=c.name+(c.year?' ('+c.year+')':'');
+      sel.appendChild(o);
+    });
+  }
+  var _tab=window.TPtab;
+  window.TPtab=function(t){if(typeof _tab==='function')_tab(t);if(t==='as')setTimeout(populateClassSelect,100);};
+  var _login=window.TPlogin;
+  window.TPlogin=function(){if(typeof _login==='function')_login.apply(this,arguments);setTimeout(populateClassSelect,300);};
+  document.addEventListener('DOMContentLoaded',function(){setTimeout(populateClassSelect,600);});
+})();
+</script>
 </body></html> literals inside ALL script blocks. 14 fixes across 3 scripts. No other changes from 276. -->
 <!-- INDEX276: replaced broken index274-tp-complete-fix with working tp-phase2-engine from index134 + TP3 additions. No other changes. -->
 <!-- INDEX276: code bleed fixed - wrapped orphaned JS in script tag, escaped </body></html> literal. TP functions preserved from 274. -->
@@ -2622,7 +2646,21 @@ aside[data-index190-sidebar],
 <button class="tutor-mic" onclick="startTutorMic(this)" title="🎤 Click to speak your answer">🎤</button>
 <button class="tutor-send" onclick="tSend(this.previousElementSibling)">↑</button>
 </div></div>
-<div class="blog-box" data-bk="blog_hs">
+
+<div class="act-box" style="border-left-color:#6366f1;margin:10px 0 6px;">
+<div class="act-title" style="color:#a5b4fc;">&#9999;&#65039; Write a practice answer</div>
+<div class="act-body"><ul>
+<li>Choose a question from the <strong>Practice Exam Questions</strong> above.</li>
+<li>Use the <strong>Student Editor</strong> below &mdash; write with evidence, analysis and a judgement.</li>
+<li>Click <strong>Auto Mark My Work</strong> for instant feedback, then <strong>Submit to Teacher</strong>.</li>
+</ul></div></div>
+<div class="act-box" style="border-left-color:#8b5cf6;margin:6px 0 14px;">
+<div class="act-title" style="color:#c4b5fd;">&#9999;&#65039; Source analysis &mdash; WACA</div>
+<div class="act-body"><ul>
+<li>Select the source question from the practice set above.</li>
+<li>Apply <strong>WACA</strong>: Who? Audience? Context? Aim?</li>
+<li>Write your analysis in the editor below and submit for marking.</li>
+</ul></div></div><div class="blog-box" data-bk="blog_hs">
 <div class="blog-hdr"><span style="font-size:1.4rem;">💬</span>
 <div><div class="blog-title">Blog Spot — Revision</div>
 <div class="blog-sub">Make a claim · Support it with evidence · Respond like a historian</div>
@@ -2672,7 +2710,21 @@ aside[data-index190-sidebar],
 <button class="tutor-mic" onclick="startTutorMic(this)" title="🎤 Click to speak your answer">🎤</button>
 <button class="tutor-send" onclick="tSend(this.previousElementSibling)">↑</button>
 </div></div>
-<div class="blog-box" data-bk="blog_1066">
+
+<div class="act-box" style="border-left-color:#6366f1;margin:10px 0 6px;">
+<div class="act-title" style="color:#a5b4fc;">&#9999;&#65039; Write a practice answer</div>
+<div class="act-body"><ul>
+<li>Choose a question from the <strong>Practice Exam Questions</strong> above.</li>
+<li>Use the <strong>Student Editor</strong> below &mdash; write with evidence, analysis and a judgement.</li>
+<li>Click <strong>Auto Mark My Work</strong> for instant feedback, then <strong>Submit to Teacher</strong>.</li>
+</ul></div></div>
+<div class="act-box" style="border-left-color:#8b5cf6;margin:6px 0 14px;">
+<div class="act-title" style="color:#c4b5fd;">&#9999;&#65039; Source analysis &mdash; WACA</div>
+<div class="act-body"><ul>
+<li>Select the source question from the practice set above.</li>
+<li>Apply <strong>WACA</strong>: Who? Audience? Context? Aim?</li>
+<li>Write your analysis in the editor below and submit for marking.</li>
+</ul></div></div><div class="blog-box" data-bk="blog_1066">
 <div class="blog-hdr"><span style="font-size:1.4rem;">💬</span>
 <div><div class="blog-title">Blog Spot — Revision</div>
 <div class="blog-sub">Make a claim · Support it with evidence · Respond like a historian</div>
@@ -2722,7 +2774,21 @@ aside[data-index190-sidebar],
 <button class="tutor-mic" onclick="startTutorMic(this)" title="🎤 Click to speak your answer">🎤</button>
 <button class="tutor-send" onclick="tSend(this.previousElementSibling)">↑</button>
 </div></div>
-<div class="blog-box" data-bk="blog_ww1">
+
+<div class="act-box" style="border-left-color:#6366f1;margin:10px 0 6px;">
+<div class="act-title" style="color:#a5b4fc;">&#9999;&#65039; Write a practice answer</div>
+<div class="act-body"><ul>
+<li>Choose a question from the <strong>Practice Exam Questions</strong> above.</li>
+<li>Use the <strong>Student Editor</strong> below &mdash; write with evidence, analysis and a judgement.</li>
+<li>Click <strong>Auto Mark My Work</strong> for instant feedback, then <strong>Submit to Teacher</strong>.</li>
+</ul></div></div>
+<div class="act-box" style="border-left-color:#8b5cf6;margin:6px 0 14px;">
+<div class="act-title" style="color:#c4b5fd;">&#9999;&#65039; Source analysis &mdash; WACA</div>
+<div class="act-body"><ul>
+<li>Select the source question from the practice set above.</li>
+<li>Apply <strong>WACA</strong>: Who? Audience? Context? Aim?</li>
+<li>Write your analysis in the editor below and submit for marking.</li>
+</ul></div></div><div class="blog-box" data-bk="blog_ww1">
 <div class="blog-hdr"><span style="font-size:1.4rem;">💬</span>
 <div><div class="blog-title">Blog Spot — Revision</div>
 <div class="blog-sub">Make a claim · Support it with evidence · Respond like a historian</div>
@@ -2772,7 +2838,21 @@ aside[data-index190-sidebar],
 <button class="tutor-mic" onclick="startTutorMic(this)" title="🎤 Click to speak your answer">🎤</button>
 <button class="tutor-send" onclick="tSend(this.previousElementSibling)">↑</button>
 </div></div>
-<div class="blog-box" data-bk="blog_lon">
+
+<div class="act-box" style="border-left-color:#6366f1;margin:10px 0 6px;">
+<div class="act-title" style="color:#a5b4fc;">&#9999;&#65039; Write a practice answer</div>
+<div class="act-body"><ul>
+<li>Choose a question from the <strong>Practice Exam Questions</strong> above.</li>
+<li>Use the <strong>Student Editor</strong> below &mdash; write with evidence, analysis and a judgement.</li>
+<li>Click <strong>Auto Mark My Work</strong> for instant feedback, then <strong>Submit to Teacher</strong>.</li>
+</ul></div></div>
+<div class="act-box" style="border-left-color:#8b5cf6;margin:6px 0 14px;">
+<div class="act-title" style="color:#c4b5fd;">&#9999;&#65039; Source analysis &mdash; WACA</div>
+<div class="act-body"><ul>
+<li>Select the source question from the practice set above.</li>
+<li>Apply <strong>WACA</strong>: Who? Audience? Context? Aim?</li>
+<li>Write your analysis in the editor below and submit for marking.</li>
+</ul></div></div><div class="blog-box" data-bk="blog_lon">
 <div class="blog-hdr"><span style="font-size:1.4rem;">💬</span>
 <div><div class="blog-title">Blog Spot — Revision</div>
 <div class="blog-sub">Make a claim · Support it with evidence · Respond like a historian</div>
@@ -2822,7 +2902,21 @@ aside[data-index190-sidebar],
 <button class="tutor-mic" onclick="startTutorMic(this)" title="🎤 Click to speak your answer">🎤</button>
 <button class="tutor-send" onclick="tSend(this.previousElementSibling)">↑</button>
 </div></div>
-<div class="blog-box" data-bk="blog_cw">
+
+<div class="act-box" style="border-left-color:#6366f1;margin:10px 0 6px;">
+<div class="act-title" style="color:#a5b4fc;">&#9999;&#65039; Write a practice answer</div>
+<div class="act-body"><ul>
+<li>Choose a question from the <strong>Practice Exam Questions</strong> above.</li>
+<li>Use the <strong>Student Editor</strong> below &mdash; write with evidence, analysis and a judgement.</li>
+<li>Click <strong>Auto Mark My Work</strong> for instant feedback, then <strong>Submit to Teacher</strong>.</li>
+</ul></div></div>
+<div class="act-box" style="border-left-color:#8b5cf6;margin:6px 0 14px;">
+<div class="act-title" style="color:#c4b5fd;">&#9999;&#65039; Source analysis &mdash; WACA</div>
+<div class="act-body"><ul>
+<li>Select the source question from the practice set above.</li>
+<li>Apply <strong>WACA</strong>: Who? Audience? Context? Aim?</li>
+<li>Write your analysis in the editor below and submit for marking.</li>
+</ul></div></div><div class="blog-box" data-bk="blog_cw">
 <div class="blog-hdr"><span style="font-size:1.4rem;">💬</span>
 <div><div class="blog-title">Blog Spot — Revision</div>
 <div class="blog-sub">Make a claim · Support it with evidence · Respond like a historian</div>
@@ -2872,7 +2966,21 @@ aside[data-index190-sidebar],
 <button class="tutor-mic" onclick="startTutorMic(this)" title="🎤 Click to speak your answer">🎤</button>
 <button class="tutor-send" onclick="tSend(this.previousElementSibling)">↑</button>
 </div></div>
-<div class="blog-box" data-bk="blog_st">
+
+<div class="act-box" style="border-left-color:#6366f1;margin:10px 0 6px;">
+<div class="act-title" style="color:#a5b4fc;">&#9999;&#65039; Write a practice answer</div>
+<div class="act-body"><ul>
+<li>Choose a question from the <strong>Practice Exam Questions</strong> above.</li>
+<li>Use the <strong>Student Editor</strong> below &mdash; write with evidence, analysis and a judgement.</li>
+<li>Click <strong>Auto Mark My Work</strong> for instant feedback, then <strong>Submit to Teacher</strong>.</li>
+</ul></div></div>
+<div class="act-box" style="border-left-color:#8b5cf6;margin:6px 0 14px;">
+<div class="act-title" style="color:#c4b5fd;">&#9999;&#65039; Source analysis &mdash; WACA</div>
+<div class="act-body"><ul>
+<li>Select the source question from the practice set above.</li>
+<li>Apply <strong>WACA</strong>: Who? Audience? Context? Aim?</li>
+<li>Write your analysis in the editor below and submit for marking.</li>
+</ul></div></div><div class="blog-box" data-bk="blog_st">
 <div class="blog-hdr"><span style="font-size:1.4rem;">💬</span>
 <div><div class="blog-title">Blog Spot — Revision</div>
 <div class="blog-sub">Make a claim · Support it with evidence · Respond like a historian</div>
@@ -2922,7 +3030,21 @@ aside[data-index190-sidebar],
 <button class="tutor-mic" onclick="startTutorMic(this)" title="🎤 Click to speak your answer">🎤</button>
 <button class="tutor-send" onclick="tSend(this.previousElementSibling)">↑</button>
 </div></div>
-<div class="blog-box" data-bk="blog_vn">
+
+<div class="act-box" style="border-left-color:#6366f1;margin:10px 0 6px;">
+<div class="act-title" style="color:#a5b4fc;">&#9999;&#65039; Write a practice answer</div>
+<div class="act-body"><ul>
+<li>Choose a question from the <strong>Practice Exam Questions</strong> above.</li>
+<li>Use the <strong>Student Editor</strong> below &mdash; write with evidence, analysis and a judgement.</li>
+<li>Click <strong>Auto Mark My Work</strong> for instant feedback, then <strong>Submit to Teacher</strong>.</li>
+</ul></div></div>
+<div class="act-box" style="border-left-color:#8b5cf6;margin:6px 0 14px;">
+<div class="act-title" style="color:#c4b5fd;">&#9999;&#65039; Source analysis &mdash; WACA</div>
+<div class="act-body"><ul>
+<li>Select the source question from the practice set above.</li>
+<li>Apply <strong>WACA</strong>: Who? Audience? Context? Aim?</li>
+<li>Write your analysis in the editor below and submit for marking.</li>
+</ul></div></div><div class="blog-box" data-bk="blog_vn">
 <div class="blog-hdr"><span style="font-size:1.4rem;">💬</span>
 <div><div class="blog-title">Blog Spot — Revision</div>
 <div class="blog-sub">Make a claim · Support it with evidence · Respond like a historian</div>
@@ -2972,7 +3094,21 @@ aside[data-index190-sidebar],
 <button class="tutor-mic" onclick="startTutorMic(this)" title="🎤 Click to speak your answer">🎤</button>
 <button class="tutor-send" onclick="tSend(this.previousElementSibling)">↑</button>
 </div></div>
-<div class="blog-box" data-bk="blog_md">
+
+<div class="act-box" style="border-left-color:#6366f1;margin:10px 0 6px;">
+<div class="act-title" style="color:#a5b4fc;">&#9999;&#65039; Write a practice answer</div>
+<div class="act-body"><ul>
+<li>Choose a question from the <strong>Practice Exam Questions</strong> above.</li>
+<li>Use the <strong>Student Editor</strong> below &mdash; write with evidence, analysis and a judgement.</li>
+<li>Click <strong>Auto Mark My Work</strong> for instant feedback, then <strong>Submit to Teacher</strong>.</li>
+</ul></div></div>
+<div class="act-box" style="border-left-color:#8b5cf6;margin:6px 0 14px;">
+<div class="act-title" style="color:#c4b5fd;">&#9999;&#65039; Source analysis &mdash; WACA</div>
+<div class="act-body"><ul>
+<li>Select the source question from the practice set above.</li>
+<li>Apply <strong>WACA</strong>: Who? Audience? Context? Aim?</li>
+<li>Write your analysis in the editor below and submit for marking.</li>
+</ul></div></div><div class="blog-box" data-bk="blog_md">
 <div class="blog-hdr"><span style="font-size:1.4rem;">💬</span>
 <div><div class="blog-title">Blog Spot — Revision</div>
 <div class="blog-sub">Make a claim · Support it with evidence · Respond like a historian</div>
@@ -9276,8 +9412,8 @@ function submitToTeacher(btn){
 <div class="tp-ov" id="tp-overlay"><div class="tp-box"><div style="font-size:2.4rem">👩‍🏫</div><h2>Teacher Portal</h2><p>Enter the staff PIN. Default PIN: <strong>2626</strong></p><input class="tp-inp" id="tp-pin" onkeydown="if(event.key==='Enter')TPlogin()" placeholder="Enter PIN" type="password"/><button class="tp-btn" onclick="TPlogin()">Enter Portal</button><div class="tp-err" id="tp-err">Incorrect PIN.</div><button class="tp-btn sec" onclick="showPg('home')">Back</button></div></div>
 <div id="tp-dash" style="display:none;">
 <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px"><div><h1 style="font-family:'Alegreya',serif;color:#fbbf24;font-size:2rem">👩‍🏫 Staff Portal</h1><p style="color:#a8a29e">Lesson plans · Classes · Auto-marking · Feedback</p></div><div><button class="tp-btn red" onclick="TPlogout()">Log Out</button><button class="tp-btn sec" onclick="showPg('home')">Gateway</button></div></div>
-<div class="tp-tabs"><button class="tp-tab on" id="tptab-lp" onclick="TPtab('lp')">📚 Teaching Packs</button><button class="tp-tab" id="tptab-cl" onclick="TPtab('cl')">👥 Classes</button><button class="tp-tab" id="tptab-ms" onclick="TPtab('ms')">📊 Marksheet</button><button class="tp-tab" id="tptab-an" onclick="TPtab('an')">📈 Analytics</button><button class="tp-tab" id="tptab-as" onclick="TPtab('as')">📝 Assignments</button><button class="tp-tab" id="tptab-test" onclick="TPtab('test')">🧪 Test Centre</button><button class="tp-tab" id="tptab-st" onclick="TPtab('st')">⚙️ Settings</button><button class="tp-tab" id="tptab-p6qa" onclick="TPtab('p6qa')">🏛️ Phase 6 QA Snapshot</button><button class="tp-tab" id="tptab-p6dqa" onclick="TPtab('p6dqa')">✅ QA / Inspection</button></div>
-<div class="tp-sec on" id="tpsec-lp"><div class="tp-pnl"><h3>📚 Phase 5 — Inspection-grade Teaching Packs</h3><div style="display:inline-block;background:rgba(124,58,237,.18);border:1px solid rgba(124,58,237,.45);color:#c4b5fd;border-radius:999px;padding:4px 10px;font-size:.72rem;font-weight:800;margin-bottom:10px;">Phase 2C auto-marking build</div><p style="color:#a8a29e;font-size:.84rem">Plans are generated from the actual live topic content. Each document uses narrow margins and includes overview, objectives, HPL/T&amp;L/SDG/AI links, key vocabulary, detailed lesson stages, differentiation, plenary, assessment opportunities and activity rubrics.</p><div style="margin:10px 0"><button class="tp-btn green" onclick="TPscanPlans()">🔄 Scan live topics</button><button class="tp-btn blue" onclick="TPdownloadAllPlanIndex()">📥 Download plan index</button></div><div class="tp-grid" id="tp-lplist"></div></div></div>
+<div class="tp-tabs"><button class="tp-tab on" id="tptab-lp" onclick="TPtab('lp')">📚 Teaching Packs</button><button class="tp-tab" id="tptab-cl" onclick="TPtab('cl')">👥 Classes</button><button class="tp-tab" id="tptab-ms" onclick="TPtab('ms')">📊 Marksheet</button><button class="tp-tab" id="tptab-an" onclick="TPtab('an')">📈 Analytics</button><button class="tp-tab" id="tptab-as" onclick="TPtab('as')">📝 Assignments</button><button class="tp-tab" id="tptab-test" onclick="TPtab('test')">🧪 Test Centre</button><button class="tp-tab" id="tptab-st" onclick="TPtab('st')">⚙️ Settings</button><button class="tp-tab" id="tptab-p6qa" onclick="TPtab('p6qa')">🏛️ QA Snapshot</button><button class="tp-tab" id="tptab-p6dqa" onclick="TPtab('p6dqa')">✅ QA / Inspection</button></div>
+<div class="tp-sec on" id="tpsec-lp"><div class="tp-pnl"><h3>📚 Inspection-grade Teaching Packs</h3><div style="display:inline-block;background:rgba(124,58,237,.18);border:1px solid rgba(124,58,237,.45);color:#c4b5fd;border-radius:999px;padding:4px 10px;font-size:.72rem;font-weight:800;margin-bottom:10px;">Inspection-grade build</div><p style="color:#a8a29e;font-size:.84rem">Plans are generated from the actual live topic content. Each document uses narrow margins and includes overview, objectives, HPL/T&amp;L/SDG/AI links, key vocabulary, detailed lesson stages, differentiation, plenary, assessment opportunities and activity rubrics.</p><div style="margin:10px 0"><button class="tp-btn green" onclick="TPscanPlans()">🔄 Scan live topics</button><button class="tp-btn blue" onclick="TPdownloadAllPlanIndex()">📥 Download plan index</button></div><div class="tp-grid" id="tp-lplist"></div></div></div>
 <div class="tp-sec" id="tpsec-cl"><div class="tp-pnl"><h3>➕ Create class</h3><div class="tp-grid"><input class="tp-inp" id="tc-name" placeholder="Class name e.g. 7A History"/><select class="tp-sel" id="tc-year"><option>Year 7</option><option>Year 8</option><option>Year 9</option><option>Year 10</option><option>Year 11</option></select><input class="tp-inp" id="tc-pin" placeholder="Class PIN e.g. history7a"/></div><button class="tp-btn green" onclick="TPcreateClass()">Create class</button></div><div class="tp-pnl"><h3>👥 My classes</h3><div id="tp-cllist"></div></div></div>
 <div class="tp-sec" id="tpsec-ms"><div class="tp-pnl"><h3>📊 Class marksheet</h3><p style="color:#a8a29e;font-size:.84rem">Submitted work appears here with automatic grade and feedback. Teachers can override grades manually.</p><div id="tp-ms"></div></div></div>
 <div class="tp-sec" id="tpsec-an"><div class="tp-pnl"><h3>📈 Teacher Analytics Dashboard</h3><div class="tp-pill">Phase 3 analytics and QA build</div><p style="color:#a8a29e;font-size:.84rem">Class overview, gaps, intervention flags and suggested next steps based on submitted work.</p><div id="tp-analytics"></div><button class="tp-btn blue" onclick="TP3renderAnalytics()">Refresh analytics</button></div></div>
@@ -9295,7 +9431,7 @@ function submitToTeacher(btn){
 <div style="background:rgba(255,255,255,.05);border-radius:12px;padding:13px;text-align:center;"><div id="spFeedback" style="font-size:1.45rem;font-weight:800;color:#fff;">0%</div><div style="font-size:.72rem;color:#fbbf24;font-weight:700;">Feedback received</div></div>
 <div id="tpsec-p6qa" class="tp-sec" style="display:none;">
 <div class="tp-pnl">
-<h3>🏛️ Phase 6 QA Snapshot</h3>
+<h3>🏛️ QA Snapshot</h3>
 <p style="color:#a8a29e;margin-bottom:14px;">Quality assurance overview across all topics. Tracks completion of lesson plans, activity rubrics, knowledge organisers and feedback evidence.</p>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
 <div style="background:rgba(134,239,172,.08);border:1px solid rgba(134,239,172,.25);border-radius:10px;padding:14px;">
