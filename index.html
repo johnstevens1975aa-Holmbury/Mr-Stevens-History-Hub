@@ -9372,290 +9372,7 @@ function submitToTeacher(btn){
 <div id="tp-dash" style="display:none;">
 <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px"><div><h1 style="font-family:'Alegreya',serif;color:#fbbf24;font-size:2rem">👩‍🏫 Staff Portal</h1><p style="color:#a8a29e">Lesson plans · Classes · Auto-marking · Feedback</p></div><div><button class="tp-btn red" onclick="TPlogout()">Log Out</button><button class="tp-btn sec" onclick="showPg('home')">Gateway</button></div></div>
 <div class="tp-tabs"><button class="tp-tab on" id="tptab-lp" onclick="TPtab('lp')">📚 Teaching Packs</button><button class="tp-tab" id="tptab-cl" onclick="TPtab('cl')">👥 Classes</button><button class="tp-tab" id="tptab-ms" onclick="TPtab('ms')">📊 Marksheet</button><button class="tp-tab" id="tptab-an" onclick="TPtab('an')">📈 Analytics</button><button class="tp-tab" id="tptab-as" onclick="TPtab('as')">📝 Assignments</button><button class="tp-tab" id="tptab-test" onclick="TPtab('test')">🧪 Test Centre</button><button class="tp-tab" id="tptab-st" onclick="TPtab('st')">⚙️ Settings</button><button class="tp-tab" id="tptab-p6qa" onclick="TPtab('p6qa')">🏛️ QA Snapshot</button><button class="tp-tab" id="tptab-p6dqa" onclick="TPtab('p6dqa')">✅ QA / Inspection</button></div>
-<div class="tp-sec on" id="tpsec-lp"><div class="tp-pnl"><h3>📚 Inspection-grade Teaching Packs</h3><p style="color:#a8a29e;font-size:.84rem">Every unit now has a teacher-facing pack with exposition notes, model answers, common student responses, activity rubrics, feedback prompts, Above / Inline / Below exemplars, retrieval tasks, knowledge organiser content and intervention mini-lessons.</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:16px;">
-<div class="tp-card"><h4>What is History?</h4><p><strong>Year 7</strong></p><p>Builds the disciplinary foundations of history: chronology, evidence, fact/opinion and cause/effect. This prepares students to think like historians before studying substantive historical units.</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">4 lessons</span><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">11 key terms</span><span style="background:rgba(5,150,105,.18);color:#6ee7b7;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">Intervention included</span></div><button class="tp-btn blue" onclick="var c=this.closest('.tp-card');var p=c.querySelector('.tp-pack-detail')||c.parentNode.querySelector('.tp-pack-detail');if(!p){p=c.nextElementSibling;while(p&amp;&amp;!p.classList.contains('tp-pack-detail'))p=p.nextElementSibling;}if(p){p.style.display=p.style.display==='block'?'none':'block';this.textContent=p.style.display==='block'?'✖ Close plan':'View teaching pack';}">View teaching pack</button><button class="tp-btn green" onclick="TPdownloadAllPlanIndex()">Download pack</button>
-<div class="tp-pack-detail" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(212,175,55,.15);">
-<p style="font-size:.78rem;color:#fbbf24;font-weight:700;margin:0 0 6px;">📋 Unit Plan — USSR in World War Two</p>
-<p style="font-size:.76rem;color:#a8a29e;margin:0 0 8px;"><strong style="color:#e8e4d0;">Curriculum intent:</strong> Intent: Cover the Nazi–Soviet Pact, Barbarossa, Stalingrad, the Soviet home front and role in Allied victory.</p>
-<p style="font-size:.76rem;color:#e8e4d0;font-weight:700;margin:0 0 4px;">Lesson sequence:</p>
-<ul style="font-size:.75rem;color:#a8a29e;line-height:1.7;margin:0 0 8px;padding-left:18px;"><li>Nazi-Soviet Pact 1939 — reasons and consequences</li><li>Operation Barbarossa 1941</li><li>Battle of Stalingrad 1942–43</li><li>Soviet contribution to Allied victory</li></ul>
-<ul style="font-size:.75rem;color:#93c5fd;line-height:1.7;margin:0;padding-left:18px;"><li>Vocabulary: Barbarossa, Stalingrad, scorched earth, partisan, Lend-Lease, Eastern Front, NKVD</li><li>Above: 'How important was Stalingrad?' 12-mark essay | Below: Cause and consequence scaffold</li></ul>
-</div>
-<div class="tp-pack-detail" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(212,175,55,.15);">
-<p style="font-size:.78rem;color:#fbbf24;font-weight:700;margin:0 0 6px;">📋 Unit Plan — Medicine Through Time</p>
-<p style="font-size:.76rem;color:#a8a29e;margin:0 0 8px;"><strong style="color:#e8e4d0;">Curriculum intent:</strong> Intent: Trace medical progress from prehistoric through to modern, focusing on factors that caused change.</p>
-<p style="font-size:.76rem;color:#e8e4d0;font-weight:700;margin:0 0 4px;">Lesson sequence:</p>
-<ul style="font-size:.75rem;color:#a8a29e;line-height:1.7;margin:0 0 8px;padding-left:18px;"><li>Prehistoric and Ancient medicine</li><li>Medieval and Renaissance medicine</li><li>Industrial Revolution — Pasteur and Koch</li><li>Modern medicine — NHS, DNA, antibiotics</li></ul>
-<ul style="font-size:.75rem;color:#93c5fd;line-height:1.7;margin:0;padding-left:18px;"><li>Vocabulary: Germ Theory, vaccination, antiseptic, anaesthetic, DNA, penicillin, surgery</li><li>Above: 'How far did medicine change 1350–1750?' essay | Below: Change and continuity grid</li></ul>
-</div>
-<div class="tp-pack-detail" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(212,175,55,.15);">
-<p style="font-size:.78rem;color:#fbbf24;font-weight:700;margin:0 0 6px;">📋 Unit Plan — Vietnam</p>
-<p style="font-size:.76rem;color:#a8a29e;margin:0 0 8px;"><strong style="color:#e8e4d0;">Curriculum intent:</strong> Intent: Cover US involvement — guerrilla tactics, media war, key turning points, anti-war movement, withdrawal.</p>
-<p style="font-size:.76rem;color:#e8e4d0;font-weight:700;margin:0 0 4px;">Lesson sequence:</p>
-<ul style="font-size:.75rem;color:#a8a29e;line-height:1.7;margin:0 0 8px;padding-left:18px;"><li>Origins of US involvement 1954–1964</li><li>Guerrilla tactics — Viet Cong and Ho Chi Minh Trail</li><li>Tet Offensive 1968</li><li>Reasons for US failure and withdrawal</li></ul>
-<ul style="font-size:.75rem;color:#93c5fd;line-height:1.7;margin:0;padding-left:18px;"><li>Vocabulary: domino theory, Viet Cong, napalm, search and destroy, Tet, draft, withdrawal</li><li>Above: 'Was the Tet Offensive a turning point?' essay | Below: Source comparison frame</li></ul>
-</div>
-<div class="tp-pack-detail" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(212,175,55,.15);">
-<p style="font-size:.78rem;color:#fbbf24;font-weight:700;margin:0 0 6px;">📋 Unit Plan — Stalin’s Russia</p>
-<p style="font-size:.76rem;color:#a8a29e;margin:0 0 8px;"><strong style="color:#e8e4d0;">Curriculum intent:</strong> Intent: Examine how Stalin consolidated power — collectivisation, purges, cult of personality, WW2 role.</p>
-<p style="font-size:.76rem;color:#e8e4d0;font-weight:700;margin:0 0 4px;">Lesson sequence:</p>
-<ul style="font-size:.75rem;color:#a8a29e;line-height:1.7;margin:0 0 8px;padding-left:18px;"><li>Stalin's rise to power 1924–1929</li><li>Collectivisation and industrialisation</li><li>The Great Purges 1936–38</li><li>Stalin in WW2 — Operation Barbarossa and Stalingrad</li></ul>
-<ul style="font-size:.75rem;color:#93c5fd;line-height:1.7;margin:0;padding-left:18px;"><li>Vocabulary: collectivisation, kulak, Gulag, Show Trial, Five Year Plan, cult of personality</li><li>Above: 12-mark evaluation essay | Below: Evidence-sorting scaffold</li></ul>
-</div>
-<div class="tp-pack-detail" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(212,175,55,.15);">
-<p style="font-size:.78rem;color:#fbbf24;font-weight:700;margin:0 0 6px;">📋 Unit Plan — The Cold War</p>
-<p style="font-size:.76rem;color:#a8a29e;margin:0 0 8px;"><strong style="color:#e8e4d0;">Curriculum intent:</strong> Intent: Cover the origins of Cold War tension, key events 1945–1991, Berlin, Cuba, Korea and the arms race.</p>
-<p style="font-size:.76rem;color:#e8e4d0;font-weight:700;margin:0 0 4px;">Lesson sequence:</p>
-<ul style="font-size:.75rem;color:#a8a29e;line-height:1.7;margin:0 0 8px;padding-left:18px;"><li>Origins — Yalta and Potsdam 1945</li><li>Berlin Blockade 1948 and Wall 1961</li><li>Korean War 1950–53</li><li>Cuban Missile Crisis 1962 · Arms race and détente</li></ul>
-<ul style="font-size:.75rem;color:#93c5fd;line-height:1.7;margin:0;padding-left:18px;"><li>Vocabulary: Iron Curtain, containment, Truman Doctrine, NATO, Warsaw Pact, détente, MAD</li><li>Above: Exam-style 8-mark response | Below: Source analysis scaffold with WACA prompt</li></ul>
-</div>
-<div class="tp-pack-detail" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(212,175,55,.15);">
-<p style="font-size:.78rem;color:#fbbf24;font-weight:700;margin:0 0 6px;">📋 Unit Plan — The League of Nations</p>
-<p style="font-size:.76rem;color:#a8a29e;margin:0 0 8px;"><strong style="color:#e8e4d0;">Curriculum intent:</strong> Intent: Examine the creation, structure, successes, failures, and ultimate collapse of collective security.</p>
-<p style="font-size:.76rem;color:#e8e4d0;font-weight:700;margin:0 0 4px;">Lesson sequence:</p>
-<ul style="font-size:.75rem;color:#a8a29e;line-height:1.7;margin:0 0 8px;padding-left:18px;"><li>Wilson's 14 Points — origins</li><li>Structure of the League</li><li>Successes in the 1920s</li><li>Failures in the 1930s — Manchuria, Abyssinia</li></ul>
-<ul style="font-size:.75rem;color:#93c5fd;line-height:1.7;margin:0;padding-left:18px;"><li>Vocabulary: collective security, sanctions, mandate, covenant, disarmament, appeasement</li><li>Above: 'Why did the League fail?' extended analysis | Below: Success/failure table scaffold</li></ul>
-</div>
-<div class="tp-pack-detail" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(212,175,55,.15);">
-<p style="font-size:.78rem;color:#fbbf24;font-weight:700;margin:0 0 6px;">📋 Unit Plan — World War One: Causes &amp; Western Front</p>
-<p style="font-size:.76rem;color:#a8a29e;margin:0 0 8px;"><strong style="color:#e8e4d0;">Curriculum intent:</strong> Intent: Cover the alliance system, assassination trigger, trench warfare, key battles and the human cost of WW1.</p>
-<p style="font-size:.76rem;color:#e8e4d0;font-weight:700;margin:0 0 4px;">Lesson sequence:</p>
-<ul style="font-size:.75rem;color:#a8a29e;line-height:1.7;margin:0 0 8px;padding-left:18px;"><li>MAIN causes — Militarism, Alliances, Imperialism, Nationalism</li><li>Schlieffen Plan and Western Front</li><li>Trench warfare and conditions</li><li>Key battles — Somme, Passchendaele</li></ul>
-<ul style="font-size:.75rem;color:#93c5fd;line-height:1.7;margin:0;padding-left:18px;"><li>Vocabulary: alliance, militarism, stalemate, trench, conscription, propaganda, attrition</li><li>Above: To what extent was Germany to blame? | Below: PEEL paragraph support</li></ul>
-</div>
-<div class="tp-pack-detail" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(212,175,55,.15);">
-<p style="font-size:.78rem;color:#fbbf24;font-weight:700;margin:0 0 6px;">📋 Unit Plan — Nelson &amp; The War at Sea</p>
-<p style="font-size:.76rem;color:#a8a29e;margin:0 0 8px;"><strong style="color:#e8e4d0;">Curriculum intent:</strong> Intent: Explore Nelson's rise, Trafalgar's significance, and Britain's naval supremacy in the Napoleonic era.</p>
-<p style="font-size:.76rem;color:#e8e4d0;font-weight:700;margin:0 0 4px;">Lesson sequence:</p>
-<ul style="font-size:.75rem;color:#a8a29e;line-height:1.7;margin:0 0 8px;padding-left:18px;"><li>Nelson's early career and character</li><li>The Battle of Trafalgar 1805</li><li>Napoleon's Continental System</li><li>Legacy of Nelson</li></ul>
-<ul style="font-size:.75rem;color:#93c5fd;line-height:1.7;margin:0;padding-left:18px;"><li>Vocabulary: Trafalgar, broadside, flagship, signal, blockade, flagship, Nelson, Napoleon</li><li>Above: 'How heroic was Nelson?' judgement essay | Below: Battle narrative scaffold</li></ul>
-</div>
-<div class="tp-pack-detail" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(212,175,55,.15);">
-<p style="font-size:.78rem;color:#fbbf24;font-weight:700;margin:0 0 6px;">📋 Unit Plan — Victorian Living Conditions &amp; Public Health</p>
-<p style="font-size:.76rem;color:#a8a29e;margin:0 0 8px;"><strong style="color:#e8e4d0;">Curriculum intent:</strong> Intent: Investigate urban squalor, disease, and the work of reformers — Snow, Chadwick, Nightingale.</p>
-<p style="font-size:.76rem;color:#e8e4d0;font-weight:700;margin:0 0 4px;">Lesson sequence:</p>
-<ul style="font-size:.75rem;color:#a8a29e;line-height:1.7;margin:0 0 8px;padding-left:18px;"><li>Urban growth and its consequences</li><li>John Snow and the Broad Street pump</li><li>Chadwick's Sanitary Report</li><li>Government reform — Public Health Acts</li></ul>
-<ul style="font-size:.75rem;color:#93c5fd;line-height:1.7;margin:0;padding-left:18px;"><li>Vocabulary: cholera, miasma, sanitation, mortality, reformer, Germ Theory, sewers</li><li>Above: 'How significant was Snow?' analysis | Below: Timeline and cause scaffold</li></ul>
-</div>
-<div class="tp-pack-detail" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(212,175,55,.15);">
-<p style="font-size:.78rem;color:#fbbf24;font-weight:700;margin:0 0 6px;">📋 Unit Plan — Farms to Factories: The Industrial Revolution</p>
-<p style="font-size:.76rem;color:#a8a29e;margin:0 0 8px;"><strong style="color:#e8e4d0;">Curriculum intent:</strong> Intent: Cover causes and consequences of industrialisation — factory conditions, child labour, domestic system.</p>
-<p style="font-size:.76rem;color:#e8e4d0;font-weight:700;margin:0 0 4px;">Lesson sequence:</p>
-<ul style="font-size:.75rem;color:#a8a29e;line-height:1.7;margin:0 0 8px;padding-left:18px;"><li>Why Britain industrialised first</li><li>The domestic system vs factories</li><li>Child labour and working conditions</li><li>Impact on families and communities</li></ul>
-<ul style="font-size:.75rem;color:#93c5fd;line-height:1.7;margin:0;padding-left:18px;"><li>Vocabulary: industrialisation, domestic system, factory, Luddite, turnpike, enclosure, capitalism</li><li>Above: Extended analysis essay | Below: Paragraph frame with sentence starters</li></ul>
-</div>
-<div class="tp-pack-detail" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(212,175,55,.15);">
-<p style="font-size:.78rem;color:#fbbf24;font-weight:700;margin:0 0 6px;">📋 Unit Plan — The Slave Trade &amp; Abolition</p>
-<p style="font-size:.76rem;color:#a8a29e;margin:0 0 8px;"><strong style="color:#e8e4d0;">Curriculum intent:</strong> Intent: Examine the transatlantic slave trade — its causes, operation, human cost and the long campaign to end it.</p>
-<p style="font-size:.76rem;color:#e8e4d0;font-weight:700;margin:0 0 4px;">Lesson sequence:</p>
-<ul style="font-size:.75rem;color:#a8a29e;line-height:1.7;margin:0 0 8px;padding-left:18px;"><li>Origins and triangular trade</li><li>The Middle Passage</li><li>Plantation life and resistance</li><li>The abolition campaign</li></ul>
-<ul style="font-size:.75rem;color:#93c5fd;line-height:1.7;margin:0;padding-left:18px;"><li>Vocabulary: triangular trade, Middle Passage, plantation, abolition, emancipation, Wilberforce</li><li>Above: Source evaluation essay | Below: Structured cause-and-effect frame</li></ul>
-</div>
-<div class="tp-pack-detail" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(212,175,55,.15);">
-<p style="font-size:.78rem;color:#fbbf24;font-weight:700;margin:0 0 6px;">📋 Unit Plan — Health, Medicine and the Black Death</p>
-<p style="font-size:.76rem;color:#a8a29e;margin:0 0 8px;"><strong style="color:#e8e4d0;">Curriculum intent:</strong> Intent: Explore medieval medical beliefs, the Black Death's devastation, and its long-term social effects.</p>
-<p style="font-size:.76rem;color:#e8e4d0;font-weight:700;margin:0 0 4px;">Lesson sequence:</p>
-<ul style="font-size:.75rem;color:#a8a29e;line-height:1.7;margin:0 0 8px;padding-left:18px;"><li>Medieval medicine — miasma and humours</li><li>The Black Death arrives</li><li>Social consequences</li><li>Who was blamed?</li></ul>
-<ul style="font-size:.75rem;color:#93c5fd;line-height:1.7;margin:0;padding-left:18px;"><li>Vocabulary: plague, miasma, humours, flagellant, scapegoat, mortality, quarantine</li><li>Above: Causation essay — why did the Black Death spread? | Below: Sequencing scaffold</li></ul>
-</div>
-<div class="tp-pack-detail" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(212,175,55,.15);">
-<p style="font-size:.78rem;color:#fbbf24;font-weight:700;margin:0 0 6px;">📋 Unit Plan — Castles Research Project</p>
-<p style="font-size:.76rem;color:#a8a29e;margin:0 0 8px;"><strong style="color:#e8e4d0;">Curriculum intent:</strong> Intent: Show how castles evolved as military, political and psychological tools of Norman control.</p>
-<p style="font-size:.76rem;color:#e8e4d0;font-weight:700;margin:0 0 4px;">Lesson sequence:</p>
-<ul style="font-size:.75rem;color:#a8a29e;line-height:1.7;margin:0 0 8px;padding-left:18px;"><li>Motte-and-bailey design</li><li>Stone keep castles</li><li>Siege of Rochester 1215</li><li>Decline of castles</li></ul>
-<ul style="font-size:.75rem;color:#93c5fd;line-height:1.7;margin:0;padding-left:18px;"><li>Vocabulary: motte, bailey, keep, siege, trebuchet, portcullis, crenellation</li><li>Above: Extended analysis of castle as symbol vs fortification | Below: Feature-labelling scaffold</li></ul>
-</div>
-<div class="tp-pack-detail" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(212,175,55,.15);">
-<p style="font-size:.78rem;color:#fbbf24;font-weight:700;margin:0 0 6px;">📋 Unit Plan — The Norman Conquest 1066</p>
-<p style="font-size:.76rem;color:#a8a29e;margin:0 0 8px;"><strong style="color:#e8e4d0;">Curriculum intent:</strong> Intent: Examine a major turning point — claimants, Hastings, and the transformation of English society.</p>
-<p style="font-size:.76rem;color:#e8e4d0;font-weight:700;margin:0 0 4px;">Lesson sequence:</p>
-<ul style="font-size:.75rem;color:#a8a29e;line-height:1.7;margin:0 0 8px;padding-left:18px;"><li>England in January 1066 — claimants</li><li>The Battle of Hastings</li><li>How William controlled England</li><li>Domesday Book and feudalism</li></ul>
-<ul style="font-size:.75rem;color:#93c5fd;line-height:1.7;margin:0;padding-left:18px;"><li>Vocabulary: succession, feudalism, Domesday, Witan, housecarls, Norman, conquest</li><li>Above: 'How significant was 1066?' extended essay | Below: Structured paragraph support</li></ul>
-</div>
-<div class="tp-pack-detail" style="display:none;margin-top:12px;padding:12px;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(212,175,55,.15);">
-<p style="font-size:.78rem;color:#fbbf24;font-weight:700;margin:0 0 6px;">📋 Unit Plan — What is History?</p>
-<p style="font-size:.76rem;color:#a8a29e;margin:0 0 8px;"><strong style="color:#e8e4d0;">Curriculum intent:</strong> Intent: Build disciplinary foundations — chronology, evidence, source analysis, fact/opinion, cause &amp; effect.</p>
-<p style="font-size:.76rem;color:#e8e4d0;font-weight:700;margin:0 0 4px;">Lesson sequence:</p>
-<ul style="font-size:.75rem;color:#a8a29e;line-height:1.7;margin:0 0 8px;padding-left:18px;"><li>Chronology — BC/AD, timelines, sequence</li><li>Primary vs Secondary sources</li><li>WACA framework</li><li>Fact, opinion and cause &amp; effect</li></ul>
-<ul style="font-size:.75rem;color:#93c5fd;line-height:1.7;margin:0;padding-left:18px;"><li>Vocabulary: BC, AD, primary, secondary, evidence, bias, WACA, chronology, causation</li><li>Above: Full WACA + extended judgement | Inline: WACA with support | Below: Guided source analysis</li></ul>
-</div><button class="tp-btn amber" onclick="showPg('y7');">📚 View Knowledge Organiser</button></div>
-<div class="tp-card"><h4>The Norman Conquest 1066</h4><p><strong>Year 7</strong></p><p>Explores one of the most significant turning points in English history through succession crisis, warfare and consequences.</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">5 lessons</span><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">9 key terms</span><span style="background:rgba(5,150,105,.18);color:#6ee7b7;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">Intervention included</span></div><button class="tp-btn blue" onclick="var c=this.closest('.tp-card');var p=c.querySelector('.tp-pack-detail')||c.parentNode.querySelector('.tp-pack-detail');if(!p){p=c.nextElementSibling;while(p&amp;&amp;!p.classList.contains('tp-pack-detail'))p=p.nextElementSibling;}if(p){p.style.display=p.style.display==='block'?'none':'block';this.textContent=p.style.display==='block'?'✖ Close plan':'View teaching pack';}">View teaching pack</button><button class="tp-btn green" onclick="TPdownloadAllPlanIndex()">Download pack</button><button class="tp-btn amber" onclick="showPg('y7');">📚 View Knowledge Organiser</button></div>
-<div class="tp-card"><h4>Castles Research Project</h4><p><strong>Year 7</strong></p><p>Shows how castles functioned as military, political and psychological tools of Norman control.</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">5 lessons</span><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">9 key terms</span><span style="background:rgba(5,150,105,.18);color:#6ee7b7;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">Intervention included</span></div><button class="tp-btn blue" onclick="var c=this.closest('.tp-card');var p=c.querySelector('.tp-pack-detail')||c.parentNode.querySelector('.tp-pack-detail');if(!p){p=c.nextElementSibling;while(p&amp;&amp;!p.classList.contains('tp-pack-detail'))p=p.nextElementSibling;}if(p){p.style.display=p.style.display==='block'?'none':'block';this.textContent=p.style.display==='block'?'✖ Close plan':'View teaching pack';}">View teaching pack</button><button class="tp-btn green" onclick="TPdownloadAllPlanIndex()">Download pack</button><button class="tp-btn amber" onclick="showPg('y7');">📚 View Knowledge Organiser</button></div>
-<div class="tp-card"><h4>Health, Medicine and the Black Death</h4><p><strong>Year 7</strong></p><p>Explores medieval beliefs about disease, plague spread, treatment and social consequences.</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">4 lessons</span><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">7 key terms</span><span style="background:rgba(5,150,105,.18);color:#6ee7b7;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">Intervention included</span></div><button class="tp-btn blue" onclick="var c=this.closest('.tp-card');var p=c.querySelector('.tp-pack-detail')||c.parentNode.querySelector('.tp-pack-detail');if(!p){p=c.nextElementSibling;while(p&amp;&amp;!p.classList.contains('tp-pack-detail'))p=p.nextElementSibling;}if(p){p.style.display=p.style.display==='block'?'none':'block';this.textContent=p.style.display==='block'?'✖ Close plan':'View teaching pack';}">View teaching pack</button><button class="tp-btn green" onclick="TPdownloadAllPlanIndex()">Download pack</button><button class="tp-btn amber" onclick="showPg('y7');">📚 View Knowledge Organiser</button></div>
-<div class="tp-card"><h4>The Slave Trade &amp; Abolition</h4><p><strong>Year 8</strong></p><p>Examines the transatlantic slave trade, conditions on slave ships, plantation life and the long campaign to end slavery.</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">5 lessons</span><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">10 key terms</span><span style="background:rgba(5,150,105,.18);color:#6ee7b7;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">Intervention included</span></div><button class="tp-btn blue" onclick="var c=this.closest('.tp-card');var p=c.querySelector('.tp-pack-detail')||c.parentNode.querySelector('.tp-pack-detail');if(!p){p=c.nextElementSibling;while(p&amp;&amp;!p.classList.contains('tp-pack-detail'))p=p.nextElementSibling;}if(p){p.style.display=p.style.display==='block'?'none':'block';this.textContent=p.style.display==='block'?'✖ Close plan':'View teaching pack';}">View teaching pack</button><button class="tp-btn green" onclick="TPdownloadAllPlanIndex()">Download pack</button><button class="tp-btn amber" onclick="showPg('y8');">📚 View Knowledge Organiser</button></div>
-<div class="tp-card"><h4>Farms to Factories: The Industrial Revolution</h4><p><strong>Year 8</strong></p><p>Covers the causes and consequences of industrialisation, factory conditions, child labour and the domestic system.</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">5 lessons</span><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">9 key terms</span><span style="background:rgba(5,150,105,.18);color:#6ee7b7;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">Intervention included</span></div><button class="tp-btn blue" onclick="var c=this.closest('.tp-card');var p=c.querySelector('.tp-pack-detail')||c.parentNode.querySelector('.tp-pack-detail');if(!p){p=c.nextElementSibling;while(p&amp;&amp;!p.classList.contains('tp-pack-detail'))p=p.nextElementSibling;}if(p){p.style.display=p.style.display==='block'?'none':'block';this.textContent=p.style.display==='block'?'✖ Close plan':'View teaching pack';}">View teaching pack</button><button class="tp-btn green" onclick="TPdownloadAllPlanIndex()">Download pack</button><button class="tp-btn amber" onclick="showPg('y8');">📚 View Knowledge Organiser</button></div>
-<div class="tp-card"><h4>Victorian Living Conditions &amp; Public Health</h4><p><strong>Year 8</strong></p><p>Investigates urban squalor, cholera, the work of reformers like Snow and Chadwick, and government intervention.</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">5 lessons</span><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">8 key terms</span><span style="background:rgba(5,150,105,.18);color:#6ee7b7;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">Intervention included</span></div><button class="tp-btn blue" onclick="var c=this.closest('.tp-card');var p=c.querySelector('.tp-pack-detail')||c.parentNode.querySelector('.tp-pack-detail');if(!p){p=c.nextElementSibling;while(p&amp;&amp;!p.classList.contains('tp-pack-detail'))p=p.nextElementSibling;}if(p){p.style.display=p.style.display==='block'?'none':'block';this.textContent=p.style.display==='block'?'✖ Close plan':'View teaching pack';}">View teaching pack</button><button class="tp-btn green" onclick="TPdownloadAllPlanIndex()">Download pack</button><button class="tp-btn amber" onclick="showPg('y8');">📚 View Knowledge Organiser</button></div>
-<div class="tp-card"><h4>Nelson &amp; The War at Sea</h4><p><strong>Year 9</strong></p><p>Explores Nelson’s rise, the significance of Trafalgar and Britain’s naval supremacy in the Napoleonic era.</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">4 lessons</span><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">8 key terms</span><span style="background:rgba(5,150,105,.18);color:#6ee7b7;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">Intervention included</span></div><button class="tp-btn blue" onclick="var c=this.closest('.tp-card');var p=c.querySelector('.tp-pack-detail')||c.parentNode.querySelector('.tp-pack-detail');if(!p){p=c.nextElementSibling;while(p&amp;&amp;!p.classList.contains('tp-pack-detail'))p=p.nextElementSibling;}if(p){p.style.display=p.style.display==='block'?'none':'block';this.textContent=p.style.display==='block'?'✖ Close plan':'View teaching pack';}">View teaching pack</button><button class="tp-btn green" onclick="TPdownloadAllPlanIndex()">Download pack</button><button class="tp-btn amber" onclick="showPg('y9');">📚 View Knowledge Organiser</button></div>
-<div class="tp-card"><h4>World War One: Causes &amp; Western Front</h4><p><strong>Year 9</strong></p><p>Covers the alliance system, assassination trigger, trench warfare, key battles and the human cost of WW1.</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">6 lessons</span><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">12 key terms</span><span style="background:rgba(5,150,105,.18);color:#6ee7b7;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">Intervention included</span></div><button class="tp-btn blue" onclick="var c=this.closest('.tp-card');var p=c.querySelector('.tp-pack-detail')||c.parentNode.querySelector('.tp-pack-detail');if(!p){p=c.nextElementSibling;while(p&amp;&amp;!p.classList.contains('tp-pack-detail'))p=p.nextElementSibling;}if(p){p.style.display=p.style.display==='block'?'none':'block';this.textContent=p.style.display==='block'?'✖ Close plan':'View teaching pack';}">View teaching pack</button><button class="tp-btn green" onclick="TPdownloadAllPlanIndex()">Download pack</button><button class="tp-btn amber" onclick="showPg('y9');">📚 View Knowledge Organiser</button></div>
-<div class="tp-card"><h4>The League of Nations</h4><p><strong>Year 9</strong></p><p>Examines the creation, structure, successes, failures and ultimate collapse of the post-war collective security system.</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">4 lessons</span><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">9 key terms</span><span style="background:rgba(5,150,105,.18);color:#6ee7b7;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">Intervention included</span></div><button class="tp-btn blue" onclick="var c=this.closest('.tp-card');var p=c.querySelector('.tp-pack-detail')||c.parentNode.querySelector('.tp-pack-detail');if(!p){p=c.nextElementSibling;while(p&amp;&amp;!p.classList.contains('tp-pack-detail'))p=p.nextElementSibling;}if(p){p.style.display=p.style.display==='block'?'none':'block';this.textContent=p.style.display==='block'?'✖ Close plan':'View teaching pack';}">View teaching pack</button><button class="tp-btn green" onclick="TPdownloadAllPlanIndex()">Download pack</button><button class="tp-btn amber" onclick="showPg('y9');">📚 View Knowledge Organiser</button></div>
-<div class="tp-card"><h4>The Cold War</h4><p><strong>iGCSE</strong></p><p>Covers the origins of Cold War tension, key events from 1945–1991, Berlin, Cuba, Korea and the arms race.</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">6 lessons</span><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">14 key terms</span><span style="background:rgba(5,150,105,.18);color:#6ee7b7;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">Exam practice included</span></div><button class="tp-btn blue" onclick="var c=this.closest('.tp-card');var p=c.querySelector('.tp-pack-detail')||c.parentNode.querySelector('.tp-pack-detail');if(!p){p=c.nextElementSibling;while(p&amp;&amp;!p.classList.contains('tp-pack-detail'))p=p.nextElementSibling;}if(p){p.style.display=p.style.display==='block'?'none':'block';this.textContent=p.style.display==='block'?'✖ Close plan':'View teaching pack';}">View teaching pack</button><button class="tp-btn green" onclick="TPdownloadAllPlanIndex()">Download pack</button><button class="tp-btn amber" onclick="showPg('ig');">📚 View Knowledge Organiser</button></div>
-<div class="tp-card"><h4>Stalin’s Russia</h4><p><strong>iGCSE</strong></p><p>Examines how Stalin consolidated power, collectivisation, industrialisation, purges and the cult of personality.</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">5 lessons</span><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">12 key terms</span><span style="background:rgba(5,150,105,.18);color:#6ee7b7;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">Exam practice included</span></div><button class="tp-btn blue" onclick="var c=this.closest('.tp-card');var p=c.querySelector('.tp-pack-detail')||c.parentNode.querySelector('.tp-pack-detail');if(!p){p=c.nextElementSibling;while(p&amp;&amp;!p.classList.contains('tp-pack-detail'))p=p.nextElementSibling;}if(p){p.style.display=p.style.display==='block'?'none':'block';this.textContent=p.style.display==='block'?'✖ Close plan':'View teaching pack';}">View teaching pack</button><button class="tp-btn green" onclick="TPdownloadAllPlanIndex()">Download pack</button><button class="tp-btn amber" onclick="showPg('ig');">📚 View Knowledge Organiser</button></div>
-<div class="tp-card"><h4>Vietnam</h4><p><strong>iGCSE</strong></p><p>Covers US involvement in Vietnam, guerrilla tactics, the media war, key turning points and US withdrawal.</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">5 lessons</span><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">11 key terms</span><span style="background:rgba(5,150,105,.18);color:#6ee7b7;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">Exam practice included</span></div><button class="tp-btn blue" onclick="var c=this.closest('.tp-card');var p=c.querySelector('.tp-pack-detail')||c.parentNode.querySelector('.tp-pack-detail');if(!p){p=c.nextElementSibling;while(p&amp;&amp;!p.classList.contains('tp-pack-detail'))p=p.nextElementSibling;}if(p){p.style.display=p.style.display==='block'?'none':'block';this.textContent=p.style.display==='block'?'✖ Close plan':'View teaching pack';}">View teaching pack</button><button class="tp-btn green" onclick="TPdownloadAllPlanIndex()">Download pack</button><button class="tp-btn amber" onclick="showPg('ig');">📚 View Knowledge Organiser</button></div>
-<div class="tp-card"><h4>Medicine Through Time</h4><p><strong>iGCSE</strong></p><p>Traces medical progress from prehistoric through to modern medicine, focusing on factors that caused change.</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">5 lessons</span><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">13 key terms</span><span style="background:rgba(5,150,105,.18);color:#6ee7b7;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">Exam practice included</span></div><button class="tp-btn blue" onclick="var c=this.closest('.tp-card');var p=c.querySelector('.tp-pack-detail')||c.parentNode.querySelector('.tp-pack-detail');if(!p){p=c.nextElementSibling;while(p&amp;&amp;!p.classList.contains('tp-pack-detail'))p=p.nextElementSibling;}if(p){p.style.display=p.style.display==='block'?'none':'block';this.textContent=p.style.display==='block'?'✖ Close plan':'View teaching pack';}">View teaching pack</button><button class="tp-btn green" onclick="TPdownloadAllPlanIndex()">Download pack</button><button class="tp-btn amber" onclick="showPg('ig');">📚 View Knowledge Organiser</button></div>
-<div class="tp-card"><h4>USSR in World War Two</h4><p><strong>iGCSE</strong></p><p>Covers the Nazi–Soviet Pact, Operation Barbarossa, Stalingrad, the home front and the USSR’s role in Allied victory.</p><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">5 lessons</span><span style="background:rgba(37,99,235,.2);color:#93c5fd;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">11 key terms</span><span style="background:rgba(5,150,105,.18);color:#6ee7b7;border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:700;">Exam practice included</span></div><button class="tp-btn blue" onclick="var c=this.closest('.tp-card');var p=c.querySelector('.tp-pack-detail')||c.parentNode.querySelector('.tp-pack-detail');if(!p){p=c.nextElementSibling;while(p&amp;&amp;!p.classList.contains('tp-pack-detail'))p=p.nextElementSibling;}if(p){p.style.display=p.style.display==='block'?'none':'block';this.textContent=p.style.display==='block'?'✖ Close plan':'View teaching pack';}">View teaching pack</button><button class="tp-btn green" onclick="TPdownloadAllPlanIndex()">Download pack</button><button class="tp-btn amber" onclick="showPg('ig');">📚 View Knowledge Organiser</button></div>
-</div></div></div>
-<div class="tp-sec" id="tpsec-cl"><div class="tp-pnl"><h3>➕ Create class</h3><div class="tp-grid"><input class="tp-inp" id="tc-name" placeholder="Class name e.g. 7A History"/><select class="tp-sel" id="tc-year"><option>Year 7</option><option>Year 8</option><option>Year 9</option><option>Year 10</option><option>Year 11</option></select><input class="tp-inp" id="tc-pin" placeholder="Class PIN e.g. history7a"/></div><button class="tp-btn green" onclick="TPcreateClass()">Create class</button></div><div class="tp-pnl"><h3>👥 My classes</h3><div id="tp-cllist"></div></div></div>
-<div class="tp-sec" id="tpsec-ms"><div class="tp-pnl"><h3>📊 Class marksheet</h3><p style="color:#a8a29e;font-size:.84rem">Submitted work appears here with automatic grade and feedback. Teachers can override grades manually.</p><div id="tp-ms"></div></div></div>
-<div class="tp-sec" id="tpsec-an"><div class="tp-pnl"><h3>📈 Teacher Analytics Dashboard</h3><p style="color:#a8a29e;font-size:.84rem">Class overview, gaps, intervention flags and suggested next steps based on submitted work.</p><div id="tp-analytics"></div><button class="tp-btn blue" onclick="TP3renderAnalytics()">Refresh analytics</button></div></div>
-<div class="tp-sec" id="tpsec-as"><div class="tp-pnl"><h3>📝 Assignment Mode</h3><div class="tp-pill">Create class assignments</div><p style="color:#a8a29e;font-size:.84rem">Create an assignment for a class, topic or activity. Assignments are stored locally in this browser and can be shared with students using the generated link.</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0"><input class="tp-inp" id="tp3-as-title" placeholder="Assignment title"/><select class="tp-select" id="tp3-as-class"><option value="">Choose class</option></select><select class="tp-select" id="tp3-as-topic"><option value="y7">Year 7</option><option value="y8">Year 8</option><option value="y9">Year 9</option><option value="ig">iGCSE</option><option value="src">Source Studies</option><option value="rv">Revision Hub</option></select><input class="tp-inp" id="tp3-as-due" placeholder="Due date text"/></div><textarea class="tp-textarea" id="tp3-as-inst" placeholder="Teacher instructions for students"></textarea><div style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0"><label style="color:#e8e4d0;font-size:.82rem"><input checked="" id="tp3-as-auto" type="checkbox"/> Allow auto-marking</label><label style="color:#e8e4d0;font-size:.82rem"><input checked="" id="tp3-as-resub" type="checkbox"/> Allow improvements/resubmission</label></div><button class="tp-btn green" onclick="TP3createAssignment()">Create assignment</button><div id="tp3-assign-list" style="margin-top:14px"></div></div></div>
-<div class="tp-sec" id="tpsec-test"><div class="tp-pnl"><h3>🧪 Testing Centre</h3><p style="color:#a8a29e;font-size:.84rem">Use this to test the whole workflow safely. Run each stage as a student and teacher before sharing with testers.</p><div class="tp-checklist"><div class="tp-check"><strong>Student test:</strong><br/>Gateway → Student Site → open activity → type → format → table → image → auto-mark → improve → download feedback → submit.</div><div class="tp-check"><strong>Staff test:</strong><br/>Portal → class → students → lesson plans → assignment link → marksheet → override feedback → analytics.</div><div class="tp-check"><strong>Feedback test:</strong><br/>Student submits → teacher marks → student opens My Work &amp; Feedback → grade and comments visible.</div></div><button class="tp-btn blue" onclick="TP3downloadTestingPack()">Download Testing Pack</button><button class="tp-btn green" onclick="TPdemoData()">Create demo class + submissions</button><button class="tp-btn blue" onclick="TPtab('ms')">Open marksheet</button><button class="tp-btn amber" onclick="TPclearDemo()">Clear demo data</button><div id="tp-testlog" style="margin-top:12px;font-size:.84rem;color:#e8e4d0"></div></div></div>
-<div class="tp-sec" id="tpsec-st"><div class="tp-pnl"><h3>⚙️ Settings and backup</h3><input class="tp-inp" id="st-cur" placeholder="Current PIN" type="password"/><input class="tp-inp" id="st-new" placeholder="New PIN" type="password"/><input class="tp-inp" id="st-con" placeholder="Confirm new PIN" type="password"/><button class="tp-btn" onclick="TPchangePin()">Change PIN</button><hr style="border-color:rgba(255,255,255,.1);margin:14px 0"/><button class="tp-btn blue" onclick="TPexport()">Export all data</button><button class="tp-btn red" onclick="TPclearAll()">Clear all data</button></div></div>
-<div class="tp-sec" id="tpsec-p6qa">
-<div class="tp-pnl">
-<h3>🏛️ QA Snapshot — Curriculum Completion Overview</h3>
-<p style="color:#a8a29e;margin-bottom:16px;">Full quality assurance overview across all 15 units. Every unit has been checked for lesson plan coverage, knowledge organiser content, activity design, rubric quality and feedback evidence.</p>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px;text-align:center;">
-<div style="background:rgba(5,150,105,.1);border:1px solid rgba(5,150,105,.3);border-radius:10px;padding:12px;">
-<div style="font-size:1.6rem;font-weight:900;color:#34d399;">15</div>
-<div style="font-size:.72rem;color:#6ee7b7;font-weight:700;">Units complete</div>
-</div>
-<div style="background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.3);border-radius:10px;padding:12px;">
-<div style="font-size:1.6rem;font-weight:900;color:#93c5fd;">60+</div>
-<div style="font-size:.72rem;color:#93c5fd;font-weight:700;">Activities with rubrics</div>
-</div>
-<div style="background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.3);border-radius:10px;padding:12px;">
-<div style="font-size:1.6rem;font-weight:900;color:#c4b5fd;">16</div>
-<div style="font-size:.72rem;color:#c4b5fd;font-weight:700;">Knowledge Organisers</div>
-</div>
-<div style="background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);border-radius:10px;padding:12px;">
-<div style="font-size:1.6rem;font-weight:900;color:#fbbf24;">100%</div>
-<div style="font-size:.72rem;color:#fbbf24;font-weight:700;">Auto-marking live</div>
-</div>
-</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
-<div style="background:rgba(134,239,172,.07);border:1px solid rgba(134,239,172,.22);border-radius:12px;padding:16px;">
-<h4 style="color:#86efac;margin:0 0 8px;font-size:.95rem;">✅ Year 7 — Medieval England</h4>
-<div style="font-size:.78rem;color:#a8a29e;margin-bottom:8px;line-height:1.6;">
-<strong style="color:#e8e4d0;">Units:</strong> What is History? · Norman Conquest · Castles Research · Black Death<br/>
-<strong style="color:#e8e4d0;">Lesson plans:</strong> ✅ All 4 units complete<br/>
-<strong style="color:#e8e4d0;">Knowledge Organisers:</strong> ✅ All 4 KOs complete<br/>
-<strong style="color:#e8e4d0;">Activities:</strong> ✅ 20+ activities across units<br/>
-<strong style="color:#e8e4d0;">Rubrics:</strong> ✅ Activity marking rubrics in each unit<br/>
-<strong style="color:#e8e4d0;">Auto-marking:</strong> ✅ Enabled on all activities<br/>
-<strong style="color:#e8e4d0;">Intervention:</strong> ✅ Intervention mini-lessons included
-</div>
-<div style="font-size:.74rem;background:rgba(134,239,172,.06);border-radius:7px;padding:7px;color:#86efac;">📊 Progression: Historical skills → Substantive knowledge → Interpretations</div>
-</div>
-<div style="background:rgba(134,239,172,.07);border:1px solid rgba(134,239,172,.22);border-radius:12px;padding:16px;">
-<h4 style="color:#86efac;margin:0 0 8px;font-size:.95rem;">✅ Year 8 — Slavery &amp; Industry</h4>
-<div style="font-size:.78rem;color:#a8a29e;margin-bottom:8px;line-height:1.6;">
-<strong style="color:#e8e4d0;">Units:</strong> Slave Trade · Industrial Revolution · Victorian Living Conditions<br/>
-<strong style="color:#e8e4d0;">Lesson plans:</strong> ✅ All 3 units complete<br/>
-<strong style="color:#e8e4d0;">Knowledge Organisers:</strong> ✅ All 3 KOs complete<br/>
-<strong style="color:#e8e4d0;">Activities:</strong> ✅ 18+ activities across units<br/>
-<strong style="color:#e8e4d0;">Rubrics:</strong> ✅ WACA, PEEL and extended writing rubrics<br/>
-<strong style="color:#e8e4d0;">Auto-marking:</strong> ✅ Enabled on all activities<br/>
-<strong style="color:#e8e4d0;">Intervention:</strong> ✅ Intervention support included
-</div>
-<div style="font-size:.74rem;background:rgba(134,239,172,.06);border-radius:7px;padding:7px;color:#86efac;">📊 Progression: Causation → Source evaluation → Extended writing</div>
-</div>
-<div style="background:rgba(134,239,172,.07);border:1px solid rgba(134,239,172,.22);border-radius:12px;padding:16px;">
-<h4 style="color:#86efac;margin:0 0 8px;font-size:.95rem;">✅ Year 9 — WW1 &amp; League of Nations</h4>
-<div style="font-size:.78rem;color:#a8a29e;margin-bottom:8px;line-height:1.6;">
-<strong style="color:#e8e4d0;">Units:</strong> Nelson · WW1 Causes · Western Front · League of Nations<br/>
-<strong style="color:#e8e4d0;">Lesson plans:</strong> ✅ All 4 units complete<br/>
-<strong style="color:#e8e4d0;">Knowledge Organisers:</strong> ✅ All 4 KOs complete<br/>
-<strong style="color:#e8e4d0;">Activities:</strong> ✅ 22+ activities including source analysis<br/>
-<strong style="color:#e8e4d0;">Rubrics:</strong> ✅ Analysis and judgement rubrics<br/>
-<strong style="color:#e8e4d0;">Auto-marking:</strong> ✅ Enabled on all activities<br/>
-<strong style="color:#e8e4d0;">Intervention:</strong> ✅ Literacy and knowledge interventions
-</div>
-<div style="font-size:.74rem;background:rgba(134,239,172,.06);border-radius:7px;padding:7px;color:#86efac;">📊 Progression: Narrative → Analysis → Judgement → Exam-readiness</div>
-</div>
-<div style="background:rgba(134,239,172,.07);border:1px solid rgba(134,239,172,.22);border-radius:12px;padding:16px;">
-<h4 style="color:#86efac;margin:0 0 8px;font-size:.95rem;">✅ iGCSE — Year 10 &amp; 11</h4>
-<div style="font-size:.78rem;color:#a8a29e;margin-bottom:8px;line-height:1.6;">
-<strong style="color:#e8e4d0;">Units:</strong> Cold War · Stalin · Vietnam · Medicine · USSR in WW2<br/>
-<strong style="color:#e8e4d0;">Lesson plans:</strong> ✅ All 5 units complete<br/>
-<strong style="color:#e8e4d0;">Knowledge Organisers:</strong> ✅ All 5 iGCSE KOs complete<br/>
-<strong style="color:#e8e4d0;">Activities:</strong> ✅ 25+ exam-style activities<br/>
-<strong style="color:#e8e4d0;">Rubrics:</strong> ✅ iGCSE-standard mark scheme rubrics<br/>
-<strong style="color:#e8e4d0;">Auto-marking:</strong> ✅ Exam practice auto-marked<br/>
-<strong style="color:#e8e4d0;">Intervention:</strong> ✅ Exam technique intervention tasks
-</div>
-<div style="font-size:.74rem;background:rgba(134,239,172,.06);border-radius:7px;padding:7px;color:#86efac;">📊 Progression: Knowledge → Source skills → Extended response → Model answers</div>
-</div>
-</div>
-<div style="margin-top:16px;background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:10px;padding:14px;">
-<h4 style="color:#fbbf24;margin:0 0 8px;font-size:.88rem;">📋 QA Summary Statement</h4>
-<p style="color:#e8e4d0;font-size:.82rem;line-height:1.7;margin:0;">All 15 teaching units in the History Hub have been audited for curriculum quality. Every unit contains: a teacher-facing lesson plan with intent, sequencing, objectives and differentiation; a full knowledge organiser; a minimum of 4 student activities with marking rubrics; auto-marking capability; and Above/Inline/Below differentiation support. Intervention mini-lessons are included for all KS3 units and exam technique tasks for all iGCSE units.</p>
-</div>
-</div>
-</div>
-<div class="tp-sec" id="tpsec-p6dqa">
-<div class="tp-pnl">
-<h3>✅ QA / Inspection Evidence Centre</h3>
-<p style="color:#a8a29e;margin-bottom:16px;">Inspection-ready evidence pack. Use the sections below to demonstrate curriculum intent, sequencing, implementation quality, assessment design, feedback systems and pupil impact to external reviewers.</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:18px;">
-<div style="background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.25);border-radius:12px;padding:15px;">
-<h4 style="color:#93c5fd;margin:0 0 10px;font-size:.9rem;">📋 1. Curriculum Intent &amp; Design</h4>
-<ul style="font-size:.78rem;color:#a8a29e;line-height:1.75;margin:0;padding-left:16px;">
-<li>The History Hub provides a coherent, progressive curriculum from Year 7 to iGCSE, building from disciplinary foundations to substantive historical knowledge.</li>
-<li>Year 7 begins with <em>What is History?</em> — explicitly teaching chronology, sources, WACA and causation before students engage with substantive topics.</li>
-<li>Each subsequent year group builds in complexity: Year 8 focuses on causation and empathy; Year 9 on analysis and extended writing; iGCSE on exam-standard evaluation.</li>
-<li>All 15 units have explicit intent statements linking to wider curriculum goals, HPL, T&amp;L frameworks and SDG connections.</li>
-<li>Sequencing decisions are documented in each unit plan with justification for order and building of prior knowledge.</li>
-</ul>
-</div>
-<div style="background:rgba(5,150,105,.08);border:1px solid rgba(5,150,105,.25);border-radius:12px;padding:15px;">
-<h4 style="color:#34d399;margin:0 0 10px;font-size:.9rem;">📖 2. Implementation Evidence</h4>
-<ul style="font-size:.78rem;color:#a8a29e;line-height:1.75;margin:0;padding-left:16px;">
-<li>All 15 teaching units have full teacher-facing lesson plans — not summaries, but detailed unit documents with lesson-by-lesson breakpoints.</li>
-<li>Each plan includes: learning objectives, key vocabulary, differentiated tasks, plenary activities, assessment opportunities and activity rubrics.</li>
-<li>Knowledge organisers are live on the student site for all 16 topics across KS3 and iGCSE — accessible at any time for retrieval practice.</li>
-<li>The student activity editor is present on all 60+ activities across the site, allowing students to write, format, auto-mark and submit work.</li>
-<li>Teaching packs are downloadable as RTF documents from the Teaching Packs tab — available for observation preparation and departmental review.</li>
-</ul>
-</div>
-<div style="background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:15px;">
-<h4 style="color:#c4b5fd;margin:0 0 10px;font-size:.9rem;">📊 3. Assessment &amp; Feedback Systems</h4>
-<ul style="font-size:.78rem;color:#a8a29e;line-height:1.75;margin:0;padding-left:16px;">
-<li>Every activity uses structured written response — not multiple choice. Students construct WACA analyses, PEEL paragraphs, and extended essays.</li>
-<li>Auto-marking is enabled on all activities and generates personalised, criterion-referenced feedback using the marking rubric for each task.</li>
-<li>Students can improve their answers after auto-marking and resubmit — building the habit of redrafting and responding to feedback.</li>
-<li>The teacher marksheet shows all submitted work with auto-grades, allowing teachers to review, override and add personalised feedback.</li>
-<li>Above / Inline / Below exemplars are included in every teaching pack, enabling teachers to use live student work to anchor standards.</li>
-</ul>
-</div>
-<div style="background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.25);border-radius:12px;padding:15px;">
-<h4 style="color:#fca5a5;margin:0 0 10px;font-size:.9rem;">📈 4. Pupil Impact &amp; Progress</h4>
-<ul style="font-size:.78rem;color:#a8a29e;line-height:1.75;margin:0;padding-left:16px;">
-<li>The student progress portal (My Work &amp; Feedback) gives students and teachers real-time visibility of submission and feedback status.</li>
-<li>Teacher analytics identify class-level gaps, common misconceptions and students below expected level — enabling targeted intervention.</li>
-<li>Intervention mini-lessons are embedded in all KS3 teaching packs to support students who are not yet meeting expected outcomes.</li>
-<li>The Assignment Mode allows teachers to set differentiated tasks and track completion — creating an evidence trail of teacher–student interaction.</li>
-<li>All submitted student work is stored in the teacher marksheet with timestamps, creating a chronological record of student progress.</li>
-</ul>
-</div>
-<div style="background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.25);border-radius:12px;padding:15px;">
-<h4 style="color:#fbbf24;margin:0 0 10px;font-size:.9rem;">🧠 5. Wider Curriculum Links</h4>
-<ul style="font-size:.78rem;color:#a8a29e;line-height:1.75;margin:0;padding-left:16px;">
-<li>All units reference HPL (High Performance Learning) frameworks — analytical thinking, creativity, intellectual rigour and self-regulation.</li>
-<li>T&amp;L links are embedded throughout — active retrieval, spaced practice, elaborative interrogation and self-explanation are all present.</li>
-<li>SDG connections are documented in each plan — topics like the slave trade, public health, WW1 and the Cold War link explicitly to SDGs 3, 10, 16 and 17.</li>
-<li>AI literacy is embedded — students interact with an AI tutor in several activities and learn to evaluate AI-generated responses critically.</li>
-<li>Source Studies provides cross-curricular evidence literacy applicable to all subjects — not just History.</li>
-</ul>
-</div>
-<div style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);border-radius:12px;padding:15px;">
-<h4 style="color:#6ee7b7;margin:0 0 10px;font-size:.9rem;">📝 6. Inspection Readiness Summary</h4>
-<ul style="font-size:.78rem;color:#a8a29e;line-height:1.75;margin:0;padding-left:16px;">
-<li><strong style="color:#e8e4d0;">Intent:</strong> Clear, documented and sequenced — available in all 15 unit plans.</li>
-<li><strong style="color:#e8e4d0;">Implementation:</strong> Evidenced through 15 teaching packs, 60+ activities, 16 KOs and a live student-facing site.</li>
-<li><strong style="color:#e8e4d0;">Impact:</strong> Evidenced through the marksheet, analytics, student feedback records and progress portal.</li>
-<li><strong style="color:#e8e4d0;">Challenge:</strong> Evidenced through Bronze/Silver/Gold/Platinum differentiation in every activity and Above/Below exemplars in every pack.</li>
-<li><strong style="color:#e8e4d0;">Independence:</strong> Evidenced through the student activity editor, AI tutor, self-assessment and resubmission workflow.</li>
-</ul>
-<div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;">
-<button class="tp-btn green" onclick="alert('QA evidence available in all teaching packs. Use Teaching Packs tab to download individual unit plans.')">Download QA Pack (via Teaching Packs tab)</button>
-<button class="tp-btn blue" onclick="TPtab('lp')">Go to Teaching Packs</button>
-</div>
-</div>
-</div>
-</div>
-</div></div></div>
-<div class="ppt-specific-index" id="ppt-specific-teaching-packs-2026-08-11"><h2>PowerPoint-specific Teaching Packs</h2><div class="ppt-pack-warning"><strong>Flagship correction:</strong> these packs are linked directly to the attached lesson PowerPoints. They are not generic unit placeholders.</div><p>Each pack below maps a lesson PowerPoint into curriculum intent, direct slide route, key vocabulary, teacher exposition, misconception check, student task, exit ticket and support/stretch.</p><div class="grid"><article class="tp-card ppt-specific-pack" id="ppt-pack-development-of-the-british-empire">
+<div class="tp-sec on" id="tpsec-lp"><div class="tp-pnl"><h3>📚 PowerPoint-specific Teaching Packs</h3><p style="color:#a8a29e;font-size:.84rem">The previous generic packs have been replaced. Each teaching pack below is now linked directly to a specific lesson PowerPoint and includes slide route, vocabulary, exposition notes, misconceptions, student task, exit ticket, support and stretch.</p><div class="ppt-specific-index" id="ppt-specific-teaching-packs-2026-08-11"><h2>PowerPoint-specific Teaching Packs</h2><div class="ppt-pack-warning"><strong>Flagship correction:</strong> these packs are linked directly to the attached lesson PowerPoints. They are not generic unit placeholders.</div><p>Each pack below replaces the previous generic unit pack with a lesson-specific pack mapped directly to the attached PowerPoint.</p><div class="grid"><article class="tp-card ppt-specific-pack" id="ppt-pack-development-of-the-british-empire">
   <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;"><span class="tp-badge">PPT-linked teaching pack</span><span class="tp-badge" style="background:rgba(59,130,246,.18);color:#bfdbfe;">31 slides mapped</span></div>
   <h3>Development of the British Empire</h3>
   <p><strong>Direct PPT source:</strong> <File>Development of the British Empire.pptx</File></p>
@@ -9940,7 +9657,168 @@ function submitToTeacher(btn){
     <details class="ppt-slide"><summary>Slide 1: YOUR LEARNING JOURNEY</summary><ul><li>Lesson Roadmap</li><li>Teams Assignment</li><li>Each lesson explores how the Industrial Revolution transformed Britain between 1750 and 1900. Tap a lesson title to jump straight to it.</li><li>1</li></ul></details><details class="ppt-slide"><summary>Slide 2: YEAR 8 HISTORY · INDUSTRY</summary><ul><li>Industry</li><li>Britain and the Industrial Revolution, 1750-1900</li><li>Teaching &amp; Learning</li><li>High Performance Learning</li></ul></details><details class="ppt-slide"><summary>Slide 3: HOW TO READ THIS LESSON</summary><ul><li>The Badge Key</li><li>Teams Assignment</li><li>Teaching &amp; Learning</li><li>Blue badges mark the classroom routine for each task — objectives, success criteria, modelling, assessment for learning and more.</li></ul></details><details class="ppt-slide"><summary>Slide 4: YEAR 8 HISTORY · LESSON 1</summary><ul><li>How Britain Changed 1750-1900</li><li>An overview of the Industrial Revolution</li><li>Discover how Britain was transformed from a rural land into an industrial nation in just 150 years.</li><li>Analysing</li></ul></details><details class="ppt-slide"><summary>Slide 5: PART 1 · SET THE SCENE</summary><ul><li>Objectives &amp; Vocabulary</li><li>Teams Assignment</li><li>Learning Objectives</li><li>Understand how Britain changed dramatically between 1750 and 1900. Explore the six areas of change: population, work, culture, health, transport and politics. Categorise the major changes across the 150-year period. Explain which changes were the most significant and why.</li></ul></details><details class="ppt-slide"><summary>Slide 6: PART 2 · DO NOW</summary><ul><li>Starter: What Do You Already Know?</li><li>Teams Assignment</li><li>Your 3-minute challenge</li><li>In your books, list three things that are made in factories today. Which of your choices do you think existed back in 1750? Then finish this sentence: “The Industrial Revolution was…”</li></ul></details><details class="ppt-slide"><summary>Slide 7: PART 4 · SOURCE STUDY</summary><ul><li>Teams Assignment</li><li>Source Study: Mapping Industry &amp; Cities</li><li>Study Source 1, a map of Britain in 1750, before the Industrial Revolution reshaped the country.</li><li>SOURCE 1 · Major cities and industries in Britain, 1750</li></ul></details><details class="ppt-slide"><summary>Slide 8: PART 6 · ON YOUR OWN</summary><ul><li>Task — How Britain Changed Investigation</li><li>Teams Assignment</li><li>Investigate the six areas of change using the information sheets, then choose the challenge level that stretches you.</li><li>Milestones to choose from</li></ul></details><details class="ppt-slide"><summary>Slide 9: PART 8 · SHOW WHAT YOU KNOW</summary><ul><li>Plenary &amp; Assessment</li><li>Teams Assignment</li><li>Exit ticket</li><li>Name one of the six areas and describe how it changed. Use the term ‘Industrial Revolution’ correctly in a sentence. Explain, in one sentence, which change you think was the most significant.</li></ul></details><details class="ppt-slide"><summary>Slide 10: YEAR 8 HISTORY · LESSON 2</summary><ul><li>Homeworkers to Factory Workers</li><li>HOME</li><li>FACTORY</li><li>From spinning at home to working by machine — how making goods changed forever.</li></ul></details><details class="ppt-slide"><summary>Slide 11: PART 1 · SET THE SCENE</summary><ul><li>Objectives &amp; Vocabulary</li><li>Teams Assignment</li><li>Learning Objectives</li><li>Identify how goods were made under the domestic system. Explain why production moved from homes into factories. Compare working life at home with working life in a factory.</li></ul></details><details class="ppt-slide"><summary>Slide 12: PART 2 · DO NOW</summary><ul><li>Starter: How Are Goods Made?</li><li>Teams Assignment</li><li>Your warm-up</li><li>In your books, write down two things in your bag and where they were made. Now imagine making a shirt by hand at home — how long might it take? Be ready to share one difference between home-made and factory-made goods.</li></ul></details><details class="ppt-slide"><summary>Slide 13: PART 5 · YOUR TURN</summary><ul><li>Task — Home or Factory?</li><li>Teams Assignment</li><li>Use the information sheet to study the move from home working to factories. Choose the level that stretches you.</li><li>WORK THROUGH THE LEVELS</li></ul></details><details class="ppt-slide"><summary>Slide 14: PART 5 · SOURCE STUDY</summary><ul><li>Teams Assignment</li><li>Source Study: The Spinning Machines</li><li>Study this scene of an early textile factory, then answer the questions below.</li><li>STUDY THE SOURCE</li></ul></details><details class="ppt-slide"><summary>Slide 15: PART 6 · SHOW WHAT YOU KNOW</summary><ul><li>Plenary: Quick-Fire Recap</li><li>Teams Assignment</li><li>Working at home</li><li>In one sentence, describe how goods were made under the domestic system. Name two machines that changed how cloth was made. Explain why making goods at home was often slow.</li></ul></details><details class="ppt-slide"><summary>Slide 16: YEAR 8 HISTORY · LESSON 3</summary><ul><li>How Factories Created Towns</li><li>FACTORIES</li><li>powered by water and steam</li><li>&amp;</li></ul></details><details class="ppt-slide"><summary>Slide 17: PART 1 · SET THE SCENE</summary><ul><li>Objectives &amp; Vocabulary</li><li>Teams Assignment</li><li>Learning Objectives</li><li>Identify why towns grew so quickly during the Industrial Revolution. Explain how factories caused the population of towns to increase. Discuss what was good and bad about more people living in towns.</li></ul></details><details class="ppt-slide"><summary>Slide 18: PART 2 · DO NOW</summary><ul><li>Starter: How Did Bradford Change?</li><li>Teams Assignment</li><li>Your warm-up</li><li>Look at the maps of Bradford over four different dates. Note how the town spreads outward: Bradford grew from about 13,000 people in 1801 to over 103,000 by 1851. Be ready to share one big change you notice.</li></ul></details>
     <div class="ppt-panel"><h4>Support / stretch</h4><ul><li><strong>Support:</strong> sentence stems: This shows..., This mattered because..., One consequence was...</li><li><strong>Stretch:</strong> ask students to challenge the slide interpretation or compare two examples from different slides.</li><li><strong>QA evidence:</strong> student written response, quiz/exit ticket, and improved paragraph after feedback.</li></ul></div>
   </div>
-</article></div></div></div>
+</article></div></div></div></div>
+<div class="tp-sec" id="tpsec-cl"><div class="tp-pnl"><h3>➕ Create class</h3><div class="tp-grid"><input class="tp-inp" id="tc-name" placeholder="Class name e.g. 7A History"/><select class="tp-sel" id="tc-year"><option>Year 7</option><option>Year 8</option><option>Year 9</option><option>Year 10</option><option>Year 11</option></select><input class="tp-inp" id="tc-pin" placeholder="Class PIN e.g. history7a"/></div><button class="tp-btn green" onclick="TPcreateClass()">Create class</button></div><div class="tp-pnl"><h3>👥 My classes</h3><div id="tp-cllist"></div></div></div>
+<div class="tp-sec" id="tpsec-ms"><div class="tp-pnl"><h3>📊 Class marksheet</h3><p style="color:#a8a29e;font-size:.84rem">Submitted work appears here with automatic grade and feedback. Teachers can override grades manually.</p><div id="tp-ms"></div></div></div>
+<div class="tp-sec" id="tpsec-an"><div class="tp-pnl"><h3>📈 Teacher Analytics Dashboard</h3><p style="color:#a8a29e;font-size:.84rem">Class overview, gaps, intervention flags and suggested next steps based on submitted work.</p><div id="tp-analytics"></div><button class="tp-btn blue" onclick="TP3renderAnalytics()">Refresh analytics</button></div></div>
+<div class="tp-sec" id="tpsec-as"><div class="tp-pnl"><h3>📝 Assignment Mode</h3><div class="tp-pill">Create class assignments</div><p style="color:#a8a29e;font-size:.84rem">Create an assignment for a class, topic or activity. Assignments are stored locally in this browser and can be shared with students using the generated link.</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0"><input class="tp-inp" id="tp3-as-title" placeholder="Assignment title"/><select class="tp-select" id="tp3-as-class"><option value="">Choose class</option></select><select class="tp-select" id="tp3-as-topic"><option value="y7">Year 7</option><option value="y8">Year 8</option><option value="y9">Year 9</option><option value="ig">iGCSE</option><option value="src">Source Studies</option><option value="rv">Revision Hub</option></select><input class="tp-inp" id="tp3-as-due" placeholder="Due date text"/></div><textarea class="tp-textarea" id="tp3-as-inst" placeholder="Teacher instructions for students"></textarea><div style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0"><label style="color:#e8e4d0;font-size:.82rem"><input checked="" id="tp3-as-auto" type="checkbox"/> Allow auto-marking</label><label style="color:#e8e4d0;font-size:.82rem"><input checked="" id="tp3-as-resub" type="checkbox"/> Allow improvements/resubmission</label></div><button class="tp-btn green" onclick="TP3createAssignment()">Create assignment</button><div id="tp3-assign-list" style="margin-top:14px"></div></div></div>
+<div class="tp-sec" id="tpsec-test"><div class="tp-pnl"><h3>🧪 Testing Centre</h3><p style="color:#a8a29e;font-size:.84rem">Use this to test the whole workflow safely. Run each stage as a student and teacher before sharing with testers.</p><div class="tp-checklist"><div class="tp-check"><strong>Student test:</strong><br/>Gateway → Student Site → open activity → type → format → table → image → auto-mark → improve → download feedback → submit.</div><div class="tp-check"><strong>Staff test:</strong><br/>Portal → class → students → lesson plans → assignment link → marksheet → override feedback → analytics.</div><div class="tp-check"><strong>Feedback test:</strong><br/>Student submits → teacher marks → student opens My Work &amp; Feedback → grade and comments visible.</div></div><button class="tp-btn blue" onclick="TP3downloadTestingPack()">Download Testing Pack</button><button class="tp-btn green" onclick="TPdemoData()">Create demo class + submissions</button><button class="tp-btn blue" onclick="TPtab('ms')">Open marksheet</button><button class="tp-btn amber" onclick="TPclearDemo()">Clear demo data</button><div id="tp-testlog" style="margin-top:12px;font-size:.84rem;color:#e8e4d0"></div></div></div>
+<div class="tp-sec" id="tpsec-st"><div class="tp-pnl"><h3>⚙️ Settings and backup</h3><input class="tp-inp" id="st-cur" placeholder="Current PIN" type="password"/><input class="tp-inp" id="st-new" placeholder="New PIN" type="password"/><input class="tp-inp" id="st-con" placeholder="Confirm new PIN" type="password"/><button class="tp-btn" onclick="TPchangePin()">Change PIN</button><hr style="border-color:rgba(255,255,255,.1);margin:14px 0"/><button class="tp-btn blue" onclick="TPexport()">Export all data</button><button class="tp-btn red" onclick="TPclearAll()">Clear all data</button></div></div>
+<div class="tp-sec" id="tpsec-p6qa">
+<div class="tp-pnl">
+<h3>🏛️ QA Snapshot — Curriculum Completion Overview</h3>
+<p style="color:#a8a29e;margin-bottom:16px;">Full quality assurance overview across all 15 units. Every unit has been checked for lesson plan coverage, knowledge organiser content, activity design, rubric quality and feedback evidence.</p>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px;text-align:center;">
+<div style="background:rgba(5,150,105,.1);border:1px solid rgba(5,150,105,.3);border-radius:10px;padding:12px;">
+<div style="font-size:1.6rem;font-weight:900;color:#34d399;">15</div>
+<div style="font-size:.72rem;color:#6ee7b7;font-weight:700;">Units complete</div>
+</div>
+<div style="background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.3);border-radius:10px;padding:12px;">
+<div style="font-size:1.6rem;font-weight:900;color:#93c5fd;">60+</div>
+<div style="font-size:.72rem;color:#93c5fd;font-weight:700;">Activities with rubrics</div>
+</div>
+<div style="background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.3);border-radius:10px;padding:12px;">
+<div style="font-size:1.6rem;font-weight:900;color:#c4b5fd;">16</div>
+<div style="font-size:.72rem;color:#c4b5fd;font-weight:700;">Knowledge Organisers</div>
+</div>
+<div style="background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);border-radius:10px;padding:12px;">
+<div style="font-size:1.6rem;font-weight:900;color:#fbbf24;">100%</div>
+<div style="font-size:.72rem;color:#fbbf24;font-weight:700;">Auto-marking live</div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
+<div style="background:rgba(134,239,172,.07);border:1px solid rgba(134,239,172,.22);border-radius:12px;padding:16px;">
+<h4 style="color:#86efac;margin:0 0 8px;font-size:.95rem;">✅ Year 7 — Medieval England</h4>
+<div style="font-size:.78rem;color:#a8a29e;margin-bottom:8px;line-height:1.6;">
+<strong style="color:#e8e4d0;">Units:</strong> What is History? · Norman Conquest · Castles Research · Black Death<br/>
+<strong style="color:#e8e4d0;">Lesson plans:</strong> ✅ All 4 units complete<br/>
+<strong style="color:#e8e4d0;">Knowledge Organisers:</strong> ✅ All 4 KOs complete<br/>
+<strong style="color:#e8e4d0;">Activities:</strong> ✅ 20+ activities across units<br/>
+<strong style="color:#e8e4d0;">Rubrics:</strong> ✅ Activity marking rubrics in each unit<br/>
+<strong style="color:#e8e4d0;">Auto-marking:</strong> ✅ Enabled on all activities<br/>
+<strong style="color:#e8e4d0;">Intervention:</strong> ✅ Intervention mini-lessons included
+</div>
+<div style="font-size:.74rem;background:rgba(134,239,172,.06);border-radius:7px;padding:7px;color:#86efac;">📊 Progression: Historical skills → Substantive knowledge → Interpretations</div>
+</div>
+<div style="background:rgba(134,239,172,.07);border:1px solid rgba(134,239,172,.22);border-radius:12px;padding:16px;">
+<h4 style="color:#86efac;margin:0 0 8px;font-size:.95rem;">✅ Year 8 — Slavery &amp; Industry</h4>
+<div style="font-size:.78rem;color:#a8a29e;margin-bottom:8px;line-height:1.6;">
+<strong style="color:#e8e4d0;">Units:</strong> Slave Trade · Industrial Revolution · Victorian Living Conditions<br/>
+<strong style="color:#e8e4d0;">Lesson plans:</strong> ✅ All 3 units complete<br/>
+<strong style="color:#e8e4d0;">Knowledge Organisers:</strong> ✅ All 3 KOs complete<br/>
+<strong style="color:#e8e4d0;">Activities:</strong> ✅ 18+ activities across units<br/>
+<strong style="color:#e8e4d0;">Rubrics:</strong> ✅ WACA, PEEL and extended writing rubrics<br/>
+<strong style="color:#e8e4d0;">Auto-marking:</strong> ✅ Enabled on all activities<br/>
+<strong style="color:#e8e4d0;">Intervention:</strong> ✅ Intervention support included
+</div>
+<div style="font-size:.74rem;background:rgba(134,239,172,.06);border-radius:7px;padding:7px;color:#86efac;">📊 Progression: Causation → Source evaluation → Extended writing</div>
+</div>
+<div style="background:rgba(134,239,172,.07);border:1px solid rgba(134,239,172,.22);border-radius:12px;padding:16px;">
+<h4 style="color:#86efac;margin:0 0 8px;font-size:.95rem;">✅ Year 9 — WW1 &amp; League of Nations</h4>
+<div style="font-size:.78rem;color:#a8a29e;margin-bottom:8px;line-height:1.6;">
+<strong style="color:#e8e4d0;">Units:</strong> Nelson · WW1 Causes · Western Front · League of Nations<br/>
+<strong style="color:#e8e4d0;">Lesson plans:</strong> ✅ All 4 units complete<br/>
+<strong style="color:#e8e4d0;">Knowledge Organisers:</strong> ✅ All 4 KOs complete<br/>
+<strong style="color:#e8e4d0;">Activities:</strong> ✅ 22+ activities including source analysis<br/>
+<strong style="color:#e8e4d0;">Rubrics:</strong> ✅ Analysis and judgement rubrics<br/>
+<strong style="color:#e8e4d0;">Auto-marking:</strong> ✅ Enabled on all activities<br/>
+<strong style="color:#e8e4d0;">Intervention:</strong> ✅ Literacy and knowledge interventions
+</div>
+<div style="font-size:.74rem;background:rgba(134,239,172,.06);border-radius:7px;padding:7px;color:#86efac;">📊 Progression: Narrative → Analysis → Judgement → Exam-readiness</div>
+</div>
+<div style="background:rgba(134,239,172,.07);border:1px solid rgba(134,239,172,.22);border-radius:12px;padding:16px;">
+<h4 style="color:#86efac;margin:0 0 8px;font-size:.95rem;">✅ iGCSE — Year 10 &amp; 11</h4>
+<div style="font-size:.78rem;color:#a8a29e;margin-bottom:8px;line-height:1.6;">
+<strong style="color:#e8e4d0;">Units:</strong> Cold War · Stalin · Vietnam · Medicine · USSR in WW2<br/>
+<strong style="color:#e8e4d0;">Lesson plans:</strong> ✅ All 5 units complete<br/>
+<strong style="color:#e8e4d0;">Knowledge Organisers:</strong> ✅ All 5 iGCSE KOs complete<br/>
+<strong style="color:#e8e4d0;">Activities:</strong> ✅ 25+ exam-style activities<br/>
+<strong style="color:#e8e4d0;">Rubrics:</strong> ✅ iGCSE-standard mark scheme rubrics<br/>
+<strong style="color:#e8e4d0;">Auto-marking:</strong> ✅ Exam practice auto-marked<br/>
+<strong style="color:#e8e4d0;">Intervention:</strong> ✅ Exam technique intervention tasks
+</div>
+<div style="font-size:.74rem;background:rgba(134,239,172,.06);border-radius:7px;padding:7px;color:#86efac;">📊 Progression: Knowledge → Source skills → Extended response → Model answers</div>
+</div>
+</div>
+<div style="margin-top:16px;background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:10px;padding:14px;">
+<h4 style="color:#fbbf24;margin:0 0 8px;font-size:.88rem;">📋 QA Summary Statement</h4>
+<p style="color:#e8e4d0;font-size:.82rem;line-height:1.7;margin:0;">All 15 teaching units in the History Hub have been audited for curriculum quality. Every unit contains: a teacher-facing lesson plan with intent, sequencing, objectives and differentiation; a full knowledge organiser; a minimum of 4 student activities with marking rubrics; auto-marking capability; and Above/Inline/Below differentiation support. Intervention mini-lessons are included for all KS3 units and exam technique tasks for all iGCSE units.</p>
+</div>
+</div>
+</div>
+<div class="tp-sec" id="tpsec-p6dqa">
+<div class="tp-pnl">
+<h3>✅ QA / Inspection Evidence Centre</h3>
+<p style="color:#a8a29e;margin-bottom:16px;">Inspection-ready evidence pack. Use the sections below to demonstrate curriculum intent, sequencing, implementation quality, assessment design, feedback systems and pupil impact to external reviewers.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:18px;">
+<div style="background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.25);border-radius:12px;padding:15px;">
+<h4 style="color:#93c5fd;margin:0 0 10px;font-size:.9rem;">📋 1. Curriculum Intent &amp; Design</h4>
+<ul style="font-size:.78rem;color:#a8a29e;line-height:1.75;margin:0;padding-left:16px;">
+<li>The History Hub provides a coherent, progressive curriculum from Year 7 to iGCSE, building from disciplinary foundations to substantive historical knowledge.</li>
+<li>Year 7 begins with <em>What is History?</em> — explicitly teaching chronology, sources, WACA and causation before students engage with substantive topics.</li>
+<li>Each subsequent year group builds in complexity: Year 8 focuses on causation and empathy; Year 9 on analysis and extended writing; iGCSE on exam-standard evaluation.</li>
+<li>All 15 units have explicit intent statements linking to wider curriculum goals, HPL, T&amp;L frameworks and SDG connections.</li>
+<li>Sequencing decisions are documented in each unit plan with justification for order and building of prior knowledge.</li>
+</ul>
+</div>
+<div style="background:rgba(5,150,105,.08);border:1px solid rgba(5,150,105,.25);border-radius:12px;padding:15px;">
+<h4 style="color:#34d399;margin:0 0 10px;font-size:.9rem;">📖 2. Implementation Evidence</h4>
+<ul style="font-size:.78rem;color:#a8a29e;line-height:1.75;margin:0;padding-left:16px;">
+<li>All 15 teaching units have full teacher-facing lesson plans — not summaries, but detailed unit documents with lesson-by-lesson breakpoints.</li>
+<li>Each plan includes: learning objectives, key vocabulary, differentiated tasks, plenary activities, assessment opportunities and activity rubrics.</li>
+<li>Knowledge organisers are live on the student site for all 16 topics across KS3 and iGCSE — accessible at any time for retrieval practice.</li>
+<li>The student activity editor is present on all 60+ activities across the site, allowing students to write, format, auto-mark and submit work.</li>
+<li>Teaching packs are downloadable as RTF documents from the Teaching Packs tab — available for observation preparation and departmental review.</li>
+</ul>
+</div>
+<div style="background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.25);border-radius:12px;padding:15px;">
+<h4 style="color:#c4b5fd;margin:0 0 10px;font-size:.9rem;">📊 3. Assessment &amp; Feedback Systems</h4>
+<ul style="font-size:.78rem;color:#a8a29e;line-height:1.75;margin:0;padding-left:16px;">
+<li>Every activity uses structured written response — not multiple choice. Students construct WACA analyses, PEEL paragraphs, and extended essays.</li>
+<li>Auto-marking is enabled on all activities and generates personalised, criterion-referenced feedback using the marking rubric for each task.</li>
+<li>Students can improve their answers after auto-marking and resubmit — building the habit of redrafting and responding to feedback.</li>
+<li>The teacher marksheet shows all submitted work with auto-grades, allowing teachers to review, override and add personalised feedback.</li>
+<li>Above / Inline / Below exemplars are included in every teaching pack, enabling teachers to use live student work to anchor standards.</li>
+</ul>
+</div>
+<div style="background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.25);border-radius:12px;padding:15px;">
+<h4 style="color:#fca5a5;margin:0 0 10px;font-size:.9rem;">📈 4. Pupil Impact &amp; Progress</h4>
+<ul style="font-size:.78rem;color:#a8a29e;line-height:1.75;margin:0;padding-left:16px;">
+<li>The student progress portal (My Work &amp; Feedback) gives students and teachers real-time visibility of submission and feedback status.</li>
+<li>Teacher analytics identify class-level gaps, common misconceptions and students below expected level — enabling targeted intervention.</li>
+<li>Intervention mini-lessons are embedded in all KS3 teaching packs to support students who are not yet meeting expected outcomes.</li>
+<li>The Assignment Mode allows teachers to set differentiated tasks and track completion — creating an evidence trail of teacher–student interaction.</li>
+<li>All submitted student work is stored in the teacher marksheet with timestamps, creating a chronological record of student progress.</li>
+</ul>
+</div>
+<div style="background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.25);border-radius:12px;padding:15px;">
+<h4 style="color:#fbbf24;margin:0 0 10px;font-size:.9rem;">🧠 5. Wider Curriculum Links</h4>
+<ul style="font-size:.78rem;color:#a8a29e;line-height:1.75;margin:0;padding-left:16px;">
+<li>All units reference HPL (High Performance Learning) frameworks — analytical thinking, creativity, intellectual rigour and self-regulation.</li>
+<li>T&amp;L links are embedded throughout — active retrieval, spaced practice, elaborative interrogation and self-explanation are all present.</li>
+<li>SDG connections are documented in each plan — topics like the slave trade, public health, WW1 and the Cold War link explicitly to SDGs 3, 10, 16 and 17.</li>
+<li>AI literacy is embedded — students interact with an AI tutor in several activities and learn to evaluate AI-generated responses critically.</li>
+<li>Source Studies provides cross-curricular evidence literacy applicable to all subjects — not just History.</li>
+</ul>
+</div>
+<div style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);border-radius:12px;padding:15px;">
+<h4 style="color:#6ee7b7;margin:0 0 10px;font-size:.9rem;">📝 6. Inspection Readiness Summary</h4>
+<ul style="font-size:.78rem;color:#a8a29e;line-height:1.75;margin:0;padding-left:16px;">
+<li><strong style="color:#e8e4d0;">Intent:</strong> Clear, documented and sequenced — available in all 15 unit plans.</li>
+<li><strong style="color:#e8e4d0;">Implementation:</strong> Evidenced through 15 teaching packs, 60+ activities, 16 KOs and a live student-facing site.</li>
+<li><strong style="color:#e8e4d0;">Impact:</strong> Evidenced through the marksheet, analytics, student feedback records and progress portal.</li>
+<li><strong style="color:#e8e4d0;">Challenge:</strong> Evidenced through Bronze/Silver/Gold/Platinum differentiation in every activity and Above/Below exemplars in every pack.</li>
+<li><strong style="color:#e8e4d0;">Independence:</strong> Evidenced through the student activity editor, AI tutor, self-assessment and resubmission workflow.</li>
+</ul>
+<div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;">
+<button class="tp-btn green" onclick="alert('QA evidence available in all teaching packs. Use Teaching Packs tab to download individual unit plans.')">Download QA Pack (via Teaching Packs tab)</button>
+<button class="tp-btn blue" onclick="TPtab('lp')">Go to Teaching Packs</button>
+</div>
+</div>
+</div>
+</div>
+</div></div></div>
+</div>
 <!-- INDEX295_FIX: closes teacher portal wrapper before My Work & Feedback so pg-student is top-level again. -->
 <div class="jhs-pg" id="pg-student"><div class="pg-inner"><div style="max-width:760px;margin:0 auto"><div style="text-align:center;padding:24px 0"><div style="font-size:3rem">👨‍🎓</div><h1 style="font-family:'Alegreya',serif;color:#fbbf24;font-size:2rem">My Work &amp; Feedback</h1><p style="color:#a8a29e">View submitted work and teacher feedback</p></div><div <div="" id="student-progress-dashboard" style="display:none;background:rgba(37,99,235,.08);border:2px solid rgba(37,99,235,.25);border-radius:16px;padding:18px;margin:18px 0;">
 <div style="font-family:'Alegreya',serif;font-size:1.25rem;font-weight:700;color:#93c5fd;margin-bottom:8px;">📊 Student Progress Visual Dashboard</div>
